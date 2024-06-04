@@ -1,2 +1,3 @@
-# widget-cli
+# @mylinkpi/widget-cli
+
 upload and manage your widgets
