@@ -54,3 +54,9 @@ export default defineWidget<IFooBarWidget>()({
   render: Render
 })
 ```
+
+## TODO
+
+- [] 访问组件共享 state hook
+- [] 访问主题类型配置列表 hook
+- [] 访问 SDK 实例 hook
