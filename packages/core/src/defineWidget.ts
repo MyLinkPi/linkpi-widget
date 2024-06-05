@@ -1,10 +1,11 @@
-import { IWidget } from "@linkpi/core";
-export {
+import type { IWidget } from "@/types";
+
+export type {
   IWidget,
   WidgetPreivew,
   WidgetRender,
   WidgetSetting,
-} from "@linkpi/core";
+} from "@/types";
 
 type UnknownObject = Record<string, unknown>;
 
