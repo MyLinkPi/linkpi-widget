@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "baseUrl": "./",
+    "strict": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "skipLibCheck": true,
+    "allowJs": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "allowSyntheticDefaultImports": true,
+    // FIXME: 临时关闭
+    "noImplicitAny": false,
+    "declaration": true
+  },
+  "include": [
+    "./mock/**/*",
+    "./src/**/*",
+    "./typings.d.ts",
+    "./window.d.ts",
+    "node_modules"
+  ]
+}
