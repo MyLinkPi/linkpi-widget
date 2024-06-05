@@ -1,0 +1,22 @@
+{
+  "name": "basic-example",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "widget-cli",
+    "build": "widget-cli build",
+    "dev": "widget-cli dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mylinkpi/widget-cli": "workspace:*",
+    "@mylinkpi/widget-core": "workspace:*"
+  },
+  "peerDependencies": {
+    "@ant-design/icons": "^4.8.3",
+    "react": "^18.2.0",
+    "antd": "^4"
+  }
+}
