@@ -1,11 +1,11 @@
-import type { IWidget } from "@/types";
+import type { IWidget } from "./types";
 
 export type {
   IWidget,
   WidgetPreivew,
   WidgetRender,
   WidgetSetting,
-} from "@/types";
+} from "./types";
 
 type UnknownObject = Record<string, unknown>;
 

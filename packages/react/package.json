@@ -1,5 +1,5 @@
 {
-  "name": "@mylinkpi/widget-core",
+  "name": "@mylinkpi/widget-react",
   "version": "1.0.0-beta-0",
   "description": "",
   "exports": {
@@ -12,9 +12,6 @@
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "prepublishOnly": "npm run build",
     "build": "unbuild",
@@ -27,9 +24,6 @@
     "access": "public"
   },
   "dependencies": {
-    "unbuild": "2.0.0"
-  },
-  "devDependencies": {
-    "react": "^18.3.1"
+    "@mylinkpi/widget-core": "workspace:*"
   }
 }
