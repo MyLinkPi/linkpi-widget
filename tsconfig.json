@@ -5,7 +5,14 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "include": ["./mock/**/*", "packages/core/src/**/*", "./typings.d.ts", "./window.d.ts", "packages/cli/src/commands"],
+  "include": [
+    "./mock/**/*",
+    "packages/core/src/**/*",
+    "./typings.d.ts",
+    "./window.d.ts",
+    "packages/cli/src/commands",
+    "packages/cli/src/index.ts"
+  ],
   "exclude": [
     "./node_modules/**/*",
     "./config/**/*",
