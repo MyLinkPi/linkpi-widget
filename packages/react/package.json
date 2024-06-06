@@ -24,6 +24,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@mylinkpi/widget-core": "workspace:*"
+    "@mylinkpi/widget-core": "workspace:*",
+    "unbuild": "2.0.0"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
   }
 }
