@@ -20,7 +20,7 @@ $ npm install -g @mylinkpi/widget-cli
 $ widget-cli COMMAND
 running command...
 $ widget-cli (--version)
-@mylinkpi/widget-cli/1.0.0-beta-0 darwin-arm64 node-v18.18.2
+@mylinkpi/widget-cli/1.0.0-beta-1 darwin-arm64 node-v18.18.2
 $ widget-cli --help [COMMAND]
 USAGE
   $ widget-cli COMMAND
@@ -56,7 +56,7 @@ DESCRIPTION
   Start the Vite development server using in-memory configuration
 ```
 
-_See code: [src/commands/dev.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta-0/src/commands/dev.ts)_
+_See code: [src/commands/dev/index.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta-1/src/commands/dev/index.ts)_
 
 ## `widget-cli hello PERSON`
 
@@ -80,7 +80,7 @@ EXAMPLES
   hello friend from oclif! (./src/commands/hello/index.ts)
 ```
 
-_See code: [src/commands/hello/index.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta-0/src/commands/hello/index.ts)_
+_See code: [src/commands/hello/index.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta-1/src/commands/hello/index.ts)_
 
 ## `widget-cli hello world`
 
@@ -98,7 +98,7 @@ EXAMPLES
   hello world! (./src/commands/hello/world.ts)
 ```
 
-_See code: [src/commands/hello/world.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta-0/src/commands/hello/world.ts)_
+_See code: [src/commands/hello/world.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta-1/src/commands/hello/world.ts)_
 
 ## `widget-cli help [COMMAND]`
 
