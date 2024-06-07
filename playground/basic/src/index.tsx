@@ -1,33 +1,35 @@
 import { defineWidget } from "@mylinkpi/widget-core";
 import React from "react";
-import { createRoot } from "react-dom/client";
+import { AlertOutlined } from "@ant-design/icons";
 
-import { Foo } from "./Foo";
+import "antd/dist/antd.css";
 
-console.log("????");
-const root = createRoot(document.getElementById("app"));
-root.render(
-  <div>
-    <h1>Hello, world</h1>
-    <Foo />
-  </div>,
-);
+const config = defineWidget()({
+  id: "BasicExample",
+  title: "基本示例",
+  icon: () => {
+    return <AlertOutlined />;
+  },
+  basic: { defaultHeight: 8, defaultWidth: 8, minHeight: 8, minWidth: 8 },
+  metadata: {},
+  render: () => {
+    return "hello world";
+  },
+  setting: () => {
+    return "setting";
+  },
+  preview: () => {
+    return "preview";
+  },
+});
 
-// export default defineWidget()({
-//   id: "BasicExample",
-//   title: "基本示例",
-//   icon: () => {
-//     return "12";
-//   },
-//   basic: { defaultHeight: 8, defaultWidth: 8, minHeight: 8, minWidth: 8 },
-//   metadata: {},
-//   render: () => {
-//     return "hello world";
-//   },
-//   setting: () => {
-//     return "setting";
-//   },
-//   preview: () => {
-//     return "preview";
-//   },
-// });
+export default config;
+
+// console.log("????");
+// console.log(typeof Button, typeof Foo);
+
+// function Bar() {
+//   return <WidgetPreviewPanel config={config} />;
+// }
+
+// export default Bar;

@@ -1,4 +1,7 @@
+import { FC } from "react";
 
-export const Foo = () => {
-  return 'this is Foo';
+const Foo: FC = () => {
+  return "this is Foo";
 };
+
+export default Foo;
