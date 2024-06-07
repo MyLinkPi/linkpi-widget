@@ -2,32 +2,46 @@
   "name": "@mylinkpi/widget-react",
   "version": "1.0.0-beta-0",
   "description": "",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
-    }
-  },
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "prepublishOnly": "npm run build",
-    "build": "unbuild",
-    "stub": "unbuild --stub"
-  },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "type": "module",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "tsc && vite build"
+  },
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
+  "sideEffects": [
+    "**/*.css"
+  ],
   "dependencies": {
-    "@mylinkpi/widget-core": "workspace:*",
-    "unbuild": "2.0.0"
+    "@mylinkpi/widget-core": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.9.1",
+    "vite-plugin-lib-inject-css": "^2.1.1"
   },
   "peerDependencies": {
-    "react": "^18.2.0"
+    "@ant-design/icons": "^4.8.3",
+    "antd": "^4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
