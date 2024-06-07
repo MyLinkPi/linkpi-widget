@@ -2,20 +2,8 @@ import { Command } from "@oclif/core";
 import react from "@vitejs/plugin-react";
 import { createServer } from "vite";
 
-export const htmlContent = `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vite App</title>
-</head>
-<body>
-  <div id="app">fuckoff</div>
-  <script type="module" src="/src/index.tsx"></script>
-</body>
-</html>
-`;
+import { serveIndexHtml } from "../../plugins/serve-index-html.js";
+import { virtualEntry } from "../../plugins/virtual-entry.js";
 
 export default class Dev extends Command {
   static description =
@@ -26,21 +14,7 @@ export default class Dev extends Command {
       const server = await createServer({
         // 传递Vite配置
         configFile: false,
-        plugins: [
-          react(),
-          {
-            configureServer(server) {
-              server.middlewares.use((req, res, next) => {
-                if (req.url === "/") {
-                  res.end(htmlContent);
-                } else {
-                  next();
-                }
-              });
-            },
-            name: "serve-index-html",
-          },
-        ],
+        plugins: [virtualEntry(), react(), serveIndexHtml()],
         root: process.cwd(),
         server: {
           port: 9000,
