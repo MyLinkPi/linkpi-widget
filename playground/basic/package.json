@@ -2,6 +2,7 @@
   "name": "basic-example",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "scripts": {
     "test": "widget-cli",
     "build": "widget-cli build",
@@ -9,15 +10,20 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@mylinkpi/widget-cli": "workspace:*",
-    "@mylinkpi/widget-core": "workspace:*"
+    "@mylinkpi/widget-core": "workspace:*",
+    "@mylinkpi/widget-react": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0"
   },
   "peerDependencies": {
     "@ant-design/icons": "^4.8.3",
+    "antd": "^4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "antd": "^4"
+    "react-dom": "^18.2.0"
   }
 }
