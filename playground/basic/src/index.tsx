@@ -2,8 +2,6 @@ import { defineWidget } from "@mylinkpi/widget-core";
 import React from "react";
 import { AlertOutlined } from "@ant-design/icons";
 
-import "antd/dist/antd.css";
-
 const config = defineWidget()({
   id: "BasicExample",
   title: "基本示例",
