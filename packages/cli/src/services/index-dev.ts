@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const request = axios.create({
-  baseURL: "https://www.ljp.elecwatt.com/",
+  baseURL: "https://test-inner.linkerpi.com:8008/",
 });
 
 export const uploadScript = (content: string) =>
@@ -23,7 +23,7 @@ type IWidget = {
 
 const BASE_PARAMS = {
   ad: "0187724A205E11EDAB7B0C42A1E838C8",
-  token: "26F7FB4198F2BC3260C61C5A47B660C1",
+  token: "75B36F989734AEA06341968E4310AF4F",
 };
 
 export const addWidget = (widget: IWidget) =>
@@ -32,7 +32,7 @@ export const addWidget = (widget: IWidget) =>
       ...widget,
       ...BASE_PARAMS,
       config: {},
-      org_id: "AEAFED52C0D76BE9369FD617B218B48A",
+      org_id: "FC378A5273D8BEF52C3AB5157B817204",
       public: true,
     },
     method: "POST",
@@ -48,7 +48,7 @@ export const updateWidget = (widget: IWidget) =>
       ...widget,
       ...BASE_PARAMS,
       config: {},
-      org_id: "AEAFED52C0D76BE9369FD617B218B48A",
+      org_id: "FC378A5273D8BEF52C3AB5157B817204",
       public: true,
     },
     method: "POST",
