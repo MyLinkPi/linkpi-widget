@@ -6,12 +6,15 @@
     "outDir": "dist",
     "rootDir": "src",
     "strict": true,
-    "target": "es2022"
+    "target": "es2022",
     /**
      * HACK
      * https://github.com/rollup/rollup/issues/5199
      */
     // "skipLibCheck": true
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": ["src/**/*"]
 }
