@@ -12,18 +12,18 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@ant-design/icons": "^4.8.3",
     "@mylinkpi/widget-cli": "workspace:*",
     "@mylinkpi/widget-core": "workspace:*",
-    "@mylinkpi/widget-react": "workspace:*"
+    "@mylinkpi/widget-react": "workspace:*",
+    "antd": "^4"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0"
   },
   "peerDependencies": {
-    "@ant-design/icons": "^4.8.3",
-    "antd": "^4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   }
 }
