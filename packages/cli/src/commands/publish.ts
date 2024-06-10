@@ -1,13 +1,13 @@
 import { Command, Flags } from "@oclif/core";
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import * as React from "react";
+// eslint-disable-next-line import/no-named-as-default
+import externalGlobals from "rollup-plugin-external-globals";
 import { build } from "vite";
+import envCompatible from "vite-plugin-env-compatible";
 
-import {
-  addWidget,
-  uploadScript,
-} from "../services/index.js";
+import { addWidget, uploadScript } from "../services/index.js";
 
 export default class Publish extends Command {
   static description = "Build and publish your widget";
@@ -27,12 +27,22 @@ export default class Publish extends Command {
           emptyOutDir: true,
           lib: {
             entry: "src/index.tsx",
-            fileName: () => "index.js",
+            fileName: "index",
             formats: ["es"],
           },
-          rollupOptions: { plugins: [peerDepsExternal() as any] },
+          rollupOptions: {
+            plugins: [
+              externalGlobals({
+                react: "React",
+                "react-dom": "ReactDOM",
+              }),
+            ],
+          },
         },
-
+        define: {
+          "process.env": process.env,
+        },
+        plugins: [envCompatible()],
         root: process.cwd(),
       });
 
@@ -46,6 +56,7 @@ export default class Publish extends Command {
 
       console.log("scriptId", scriptId);
 
+      global.React = React;
       const config: any = await import(process.cwd() + "/dist/index.js");
       const widgetConfig = config.default;
 
