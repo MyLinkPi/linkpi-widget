@@ -39,6 +39,8 @@ export function virtualEntry(): PluginOption {
 
           import config from './src/index.tsx';
 
+          import "antd/dist/antd.css";
+
           const root = ReactDOM.createRoot(document.getElementById('app'));
 
           root.render(
