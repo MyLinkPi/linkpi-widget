@@ -18,13 +18,11 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "types": [
-      "typing.d.ts"
-    ]
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "src"
+    "src/**/*",
+    "./typing.d.ts"
   ],
   "references": [
     {

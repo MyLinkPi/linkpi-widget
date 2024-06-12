@@ -1,4 +1,4 @@
-import type { IWidget } from "./types";
+import type { IWidget, UnknownObject } from "./types";
 
 export type {
   IWidget,
@@ -6,8 +6,6 @@ export type {
   WidgetRender,
   WidgetSetting,
 } from "./types";
-
-type UnknownObject = Record<string, unknown>;
 
 /**
  * 定义组件，并且做类型检查
