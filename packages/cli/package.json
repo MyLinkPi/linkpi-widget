@@ -30,6 +30,7 @@
     "rollup-plugin-external-globals": "^0.10.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "vite": "^5.2.12",
+    "vite-plugin-css-injected-by-js": "^3.5.1",
     "vite-plugin-env-compatible": "^2.0.1"
   },
   "devDependencies": {

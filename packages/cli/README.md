@@ -20,7 +20,7 @@ $ npm install -g @mylinkpi/widget-cli
 $ widget-cli COMMAND
 running command...
 $ widget-cli (--version)
-@mylinkpi/widget-cli/1.0.0-beta.4 darwin-arm64 node-v18.18.2
+@mylinkpi/widget-cli/1.0.0-beta.5 darwin-arm64 node-v18.18.2
 $ widget-cli --help [COMMAND]
 USAGE
   $ widget-cli COMMAND
@@ -58,7 +58,7 @@ DESCRIPTION
   Start the Vite development server using in-memory configuration
 ```
 
-_See code: [src/commands/dev/index.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta.4/src/commands/dev/index.ts)_
+_See code: [src/commands/dev/index.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta.5/src/commands/dev/index.ts)_
 
 ## `widget-cli hello PERSON`
 
@@ -82,7 +82,7 @@ EXAMPLES
   hello friend from oclif! (./src/commands/hello/index.ts)
 ```
 
-_See code: [src/commands/hello/index.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta.4/src/commands/hello/index.ts)_
+_See code: [src/commands/hello/index.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta.5/src/commands/hello/index.ts)_
 
 ## `widget-cli hello world`
 
@@ -100,7 +100,7 @@ EXAMPLES
   hello world! (./src/commands/hello/world.ts)
 ```
 
-_See code: [src/commands/hello/world.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta.4/src/commands/hello/world.ts)_
+_See code: [src/commands/hello/world.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta.5/src/commands/hello/world.ts)_
 
 ## `widget-cli help [COMMAND]`
 
@@ -429,7 +429,7 @@ EXAMPLES
   $ widget-cli publish
 ```
 
-_See code: [src/commands/publish.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta.4/src/commands/publish.ts)_
+_See code: [src/commands/publish.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta.5/src/commands/publish.ts)_
 
 ## `widget-cli publish-dev`
 
@@ -449,5 +449,5 @@ EXAMPLES
   $ widget-cli publish
 ```
 
-_See code: [src/commands/publish-dev.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta.4/src/commands/publish-dev.ts)_
+_See code: [src/commands/publish-dev.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta.5/src/commands/publish-dev.ts)_
 <!-- commandsstop -->

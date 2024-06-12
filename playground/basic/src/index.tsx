@@ -2,6 +2,8 @@ import { defineWidget } from "@mylinkpi/widget-core";
 import React from "react";
 import { AlertOutlined } from "@ant-design/icons";
 
+import styles from "./styles.module.scss";
+
 const config = defineWidget()({
   id: "BasicExample",
   title: "基本示例",
@@ -17,7 +19,7 @@ const config = defineWidget()({
     return "setting";
   },
   preview: () => {
-    return "preview";
+    return <div className={styles.content}>preview</div>;
   },
 });
 
