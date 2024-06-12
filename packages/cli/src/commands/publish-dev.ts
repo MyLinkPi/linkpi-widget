@@ -2,17 +2,15 @@ import { Command, Flags } from "@oclif/core";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import * as React from "react";
-// eslint-disable-next-line import/no-named-as-default
-import externalGlobals from "rollup-plugin-external-globals";
 import { build } from "vite";
-import envCompatible from "vite-plugin-env-compatible";
 
 import { addWidget, uploadScript } from "../services/index-dev.js";
+import { createViteBuildConfig } from "../utils/vite.js";
 
 export default class PublishDev extends Command {
-  static description = "Build and publish your widget";
+  static description = "Build and publish-dev your widget";
 
-  static examples = [`$ widget-cli publish`];
+  static examples = [`$ widget-cli publish-dev`];
 
   static flags = {
     help: Flags.help({ char: "h" }),
@@ -22,29 +20,7 @@ export default class PublishDev extends Command {
   async buildAndUpload() {
     try {
       // 使用Vite打包
-      await build({
-        build: {
-          emptyOutDir: true,
-          lib: {
-            entry: "src/index.tsx",
-            fileName: "index",
-            formats: ["es"],
-          },
-          rollupOptions: {
-            plugins: [
-              externalGlobals({
-                react: "React",
-                "react-dom": "ReactDOM",
-              }),
-            ],
-          },
-        },
-        define: {
-          "process.env": process.env,
-        },
-        plugins: [envCompatible()],
-        root: process.cwd(),
-      });
+      await build(createViteBuildConfig());
 
       // 调用上传API
       // 示例使用axios上传（需先安装axios）
