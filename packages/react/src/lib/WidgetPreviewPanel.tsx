@@ -1,14 +1,27 @@
 import { IWidget } from "@mylinkpi/widget-core";
 import { Layout, Card, Row, Col, Typography } from "antd";
-import { useState, type FC } from "react";
+import { useMemo, useState, type FC } from "react";
 
 import styles from "./WidgetPreviewPanel.module.css";
+import { WidgetSettingContext } from "../hook";
 
 const { Header, Content, Footer } = Layout;
 
 export const WidgetPreviewPanel: FC<{
   config: IWidget<string, Record<string, any>>;
 }> = ({ config }) => {
+  const [widgetInstanceConfig, setWidgetInstanceConfig] = useState({
+    ...config.metadata,
+  });
+
+  const contextValue = useMemo(
+    () => ({
+      value: widgetInstanceConfig,
+      setValue: setWidgetInstanceConfig,
+    }),
+    [widgetInstanceConfig],
+  );
+
   const [tab, setTab] = useState<string>("setting");
   const PreviewComponent = config.preview;
   const FormComponent = config.setting;
@@ -57,25 +70,27 @@ export const WidgetPreviewPanel: FC<{
   };
 
   return (
-    <Layout className="layout" style={{ minHeight: "100vh" }}>
-      <Header></Header>
-      <Content style={{ padding: 20 }}>
-        <Card
-          title="自定义组件开发"
-          tabList={[
-            { tab: "配置", key: "setting" },
-            { tab: "预览", key: "preview" },
-          ]}
-          onTabChange={setTab}
-        >
-          {tabContent[tab as keyof typeof tabContent]}
-        </Card>
-      </Content>
-      <Footer style={{ textAlign: "center" }}>
-        <Typography.Link href="https://mylinkpi.com/home">
-          @mylinkpi
-        </Typography.Link>
-      </Footer>
-    </Layout>
+    <WidgetSettingContext.Provider value={contextValue}>
+      <Layout className="layout" style={{ minHeight: "100vh" }}>
+        <Header></Header>
+        <Content style={{ padding: 20 }}>
+          <Card
+            title="自定义组件开发"
+            tabList={[
+              { tab: "配置", key: "setting" },
+              { tab: "预览", key: "preview" },
+            ]}
+            onTabChange={setTab}
+          >
+            {tabContent[tab as keyof typeof tabContent]}
+          </Card>
+        </Content>
+        <Footer style={{ textAlign: "center" }}>
+          <Typography.Link href="https://mylinkpi.com/home">
+            @mylinkpi
+          </Typography.Link>
+        </Footer>
+      </Layout>
+    </WidgetSettingContext.Provider>
   );
 };

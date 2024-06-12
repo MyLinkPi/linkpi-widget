@@ -1,25 +1,50 @@
 import { defineWidget } from "@mylinkpi/widget-core";
 import React from "react";
+import { Form, Input } from "antd";
 import { AlertOutlined } from "@ant-design/icons";
+import { useWidgetSetting } from "@mylinkpi/widget-react";
 
-import styles from "./styles.module.scss";
+// @ts-ignore
+import styles from "./index.module.scss";
 
-const config = defineWidget()({
+type BasicExampleConfig = {
+  title: string;
+};
+
+const config = defineWidget<BasicExampleConfig>()({
   id: "BasicExample",
   title: "基本示例",
   icon: () => {
     return <AlertOutlined />;
   },
   basic: { defaultHeight: 8, defaultWidth: 8, minHeight: 8, minWidth: 8 },
-  metadata: {},
+  metadata: { title: "默认" },
   render: () => {
     return "hello world";
   },
   setting: () => {
-    return "setting";
+    const [setting, setSetting] = useWidgetSetting<BasicExampleConfig>();
+    return (
+      <div>
+        <Form>
+          <Form.Item label="标题">
+            <Input
+              defaultValue={setting.title}
+              onChange={(e) => setSetting({ title: e.target.value })}
+            />
+          </Form.Item>
+        </Form>
+      </div>
+    );
   },
   preview: () => {
-    return <div className={styles.content}>preview</div>;
+    const [setting, setSetting] = useWidgetSetting<BasicExampleConfig>();
+    return (
+      <div className={styles.content}>
+        <h1>{setting.title}</h1>
+        preview
+      </div>
+    );
   },
 });
 

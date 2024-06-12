@@ -1,5 +1,7 @@
 import { FC, ReactNode } from "react";
 
+export type UnknownObject = Record<string, unknown>;
+
 interface IWidgetBasic {
   maxCount?: number;
   minCount?: number;
@@ -46,7 +48,7 @@ export type WidgetRender<T extends unknown = unknown> = FC<
 
 export interface IWidget<
   P extends string,
-  T extends Record<string, unknown> = Record<string, unknown>,
+  T extends UnknownObject = UnknownObject,
 > {
   render: WidgetRender;
   preview: WidgetPreivew;
