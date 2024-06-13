@@ -13,13 +13,14 @@
     "postpack": "shx rm -f oclif.manifest.json",
     "posttest": "pnpm lint",
     "prepack": "oclif manifest && oclif readme",
-    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif readme && git add README.md"
   },
   "publishConfig": {
     "access": "public"
   },
   "dependencies": {
+    "@mylinkpi/widget-core": "workspace:*",
+    "@mylinkpi/widget-react": "workspace:*",
     "@oclif/core": "^4",
     "@oclif/plugin-help": "^6",
     "@oclif/plugin-plugins": "^5",
@@ -34,10 +35,8 @@
     "vite-plugin-env-compatible": "^2.0.1"
   },
   "devDependencies": {
-    "@mylinkpi/widget-react": "workspace:*",
     "@oclif/test": "^4",
     "@types/chai": "^4",
-    "@types/mocha": "^10",
     "@types/node": "^18",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
@@ -47,7 +46,6 @@
     "eslint-config-oclif": "^5",
     "eslint-config-oclif-typescript": "^3",
     "eslint-config-prettier": "^9",
-    "mocha": "^10",
     "oclif": "^4.13.4",
     "shx": "^0.3.4",
     "ts-node": "^10",
@@ -80,6 +78,9 @@
     "topics": {
       "dev": {
         "description": "start a vite dev server"
+      },
+      "publish": {
+        "description": "build and publish a widget to server"
       }
     }
   }

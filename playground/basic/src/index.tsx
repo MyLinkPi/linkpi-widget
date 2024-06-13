@@ -20,25 +20,25 @@ const config = defineWidget<BasicExampleConfig>()({
   basic: { defaultHeight: 8, defaultWidth: 8, minHeight: 8, minWidth: 8 },
   metadata: { title: "默认" },
   render: () => {
-    return "hello world";
+    const [setting] = useWidgetSetting<BasicExampleConfig>();
+    return "hello world: " + setting.title;
   },
   setting: () => {
     const [setting, setSetting] = useWidgetSetting<BasicExampleConfig>();
+
     return (
-      <div>
-        <Form>
-          <Form.Item label="标题">
-            <Input
-              defaultValue={setting.title}
-              onChange={(e) => setSetting({ title: e.target.value })}
-            />
-          </Form.Item>
-        </Form>
-      </div>
+      <Form>
+        <Form.Item label="标题">
+          <Input
+            defaultValue={setting.title}
+            onChange={(e) => setSetting({ title: e.target.value })}
+          />
+        </Form.Item>
+      </Form>
     );
   },
   preview: () => {
-    const [setting, setSetting] = useWidgetSetting<BasicExampleConfig>();
+    const [setting] = useWidgetSetting<BasicExampleConfig>();
     return (
       <div className={styles.content}>
         <h1>{setting.title}</h1>
@@ -49,12 +49,3 @@ const config = defineWidget<BasicExampleConfig>()({
 });
 
 export default config;
-
-// console.log("????");
-// console.log(typeof Button, typeof Foo);
-
-// function Bar() {
-//   return <WidgetPreviewPanel config={config} />;
-// }
-
-// export default Bar;

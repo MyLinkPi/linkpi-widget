@@ -4,7 +4,12 @@ import path from "node:path";
 import * as React from "react";
 import { build } from "vite";
 
-import { addWidget, uploadScript } from "../services/index-dev.js";
+import {
+  addWidget,
+  getWidget,
+  updateWidget,
+  uploadScript,
+} from "../services/index-dev.js";
 import { createViteBuildConfig } from "../utils/vite.js";
 
 export default class PublishDev extends Command {
@@ -27,20 +32,34 @@ export default class PublishDev extends Command {
       const filePath = path.join(process.cwd(), "dist/index.js");
       const fileContent = readFileSync(filePath, "utf8");
 
+      this.log("uploading script");
       const res = await uploadScript(fileContent);
       const scriptId = res.data.id;
 
       console.log("scriptId", scriptId);
 
       global.React = React;
-      const config: any = await import(process.cwd() + "/dist/index.js");
+      const modulePath =
+        "file://" + path.resolve(process.cwd(), "dist", "index.js");
+      const config: any = await import(modulePath);
       const widgetConfig = config.default;
 
-      await addWidget({
-        name: widgetConfig.title,
-        script_id: scriptId,
-        widget_id: widgetConfig.id,
-      });
+      const info = await getWidget(widgetConfig.id);
+      if (info) {
+        this.log("updating widget");
+        await updateWidget({
+          name: widgetConfig.title,
+          script_id: scriptId,
+          widget_id: widgetConfig.id,
+        });
+      } else {
+        this.log("adding widget");
+        await addWidget({
+          name: widgetConfig.title,
+          script_id: scriptId,
+          widget_id: widgetConfig.id,
+        });
+      }
 
       this.log("Widget published successfully.");
     } catch (error) {

@@ -1,2 +1,2 @@
-export * from './defineWidget'
-export * from './types'
+export * from "./defineWidget";
+export * from "./types";
