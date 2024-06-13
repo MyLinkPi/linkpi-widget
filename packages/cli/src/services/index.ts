@@ -54,3 +54,19 @@ export const updateWidget = (widget: IWidget) =>
     method: "POST",
     url: "/api/front_script/updateComp",
   });
+
+export const getWidget = (widget_id: string) =>
+  request({
+    data: {
+      org_id: "AEAFED52C0D76BE9369FD617B218B48A",
+      widget_id,
+    },
+    method: "POST",
+    url: "/api/front_script/getCompList",
+  }).then((res) => {
+    if (res.data.status === "ok") {
+      return res.data.data[0];
+    }
+
+    throw res.data;
+  });

@@ -1,51 +1,54 @@
-@mylinkpi/cli-demo
-=================
+# @mylinkpi/widget-cli
 
 A new CLI generated with oclif
-
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/@mylinkpi/cli-demo.svg)](https://npmjs.org/package/@mylinkpi/cli-demo)
 [![Downloads/week](https://img.shields.io/npm/dw/@mylinkpi/cli-demo.svg)](https://npmjs.org/package/@mylinkpi/cli-demo)
 
-
 <!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
+
 # Usage
+
 <!-- usage -->
+
 ```sh-session
 $ npm install -g @mylinkpi/widget-cli
 $ widget-cli COMMAND
 running command...
 $ widget-cli (--version)
-@mylinkpi/widget-cli/1.0.0-beta.6 darwin-arm64 node-v18.18.2
+@mylinkpi/widget-cli/1.0.0-beta.7 darwin-arm64 node-v18.18.2
 $ widget-cli --help [COMMAND]
 USAGE
   $ widget-cli COMMAND
 ...
 ```
+
 <!-- usagestop -->
+
 # Commands
+
 <!-- commands -->
-* [`widget-cli build`](#widget-cli-build)
-* [`widget-cli dev`](#widget-cli-dev)
-* [`widget-cli hello PERSON`](#widget-cli-hello-person)
-* [`widget-cli hello world`](#widget-cli-hello-world)
-* [`widget-cli help [COMMAND]`](#widget-cli-help-command)
-* [`widget-cli plugins`](#widget-cli-plugins)
-* [`widget-cli plugins add PLUGIN`](#widget-cli-plugins-add-plugin)
-* [`widget-cli plugins:inspect PLUGIN...`](#widget-cli-pluginsinspect-plugin)
-* [`widget-cli plugins install PLUGIN`](#widget-cli-plugins-install-plugin)
-* [`widget-cli plugins link PATH`](#widget-cli-plugins-link-path)
-* [`widget-cli plugins remove [PLUGIN]`](#widget-cli-plugins-remove-plugin)
-* [`widget-cli plugins reset`](#widget-cli-plugins-reset)
-* [`widget-cli plugins uninstall [PLUGIN]`](#widget-cli-plugins-uninstall-plugin)
-* [`widget-cli plugins unlink [PLUGIN]`](#widget-cli-plugins-unlink-plugin)
-* [`widget-cli plugins update`](#widget-cli-plugins-update)
-* [`widget-cli publish`](#widget-cli-publish)
-* [`widget-cli publish-dev`](#widget-cli-publish-dev)
+
+- [`widget-cli build`](#widget-cli-build)
+- [`widget-cli dev`](#widget-cli-dev)
+- [`widget-cli help [COMMAND]`](#widget-cli-help-command)
+- [`widget-cli plugins`](#widget-cli-plugins)
+- [`widget-cli plugins add PLUGIN`](#widget-cli-plugins-add-plugin)
+- [`widget-cli plugins:inspect PLUGIN...`](#widget-cli-pluginsinspect-plugin)
+- [`widget-cli plugins install PLUGIN`](#widget-cli-plugins-install-plugin)
+- [`widget-cli plugins link PATH`](#widget-cli-plugins-link-path)
+- [`widget-cli plugins remove [PLUGIN]`](#widget-cli-plugins-remove-plugin)
+- [`widget-cli plugins reset`](#widget-cli-plugins-reset)
+- [`widget-cli plugins uninstall [PLUGIN]`](#widget-cli-plugins-uninstall-plugin)
+- [`widget-cli plugins unlink [PLUGIN]`](#widget-cli-plugins-unlink-plugin)
+- [`widget-cli plugins update`](#widget-cli-plugins-update)
+- [`widget-cli publish`](#widget-cli-publish)
+- [`widget-cli publish-dev`](#widget-cli-publish-dev)
 
 ## `widget-cli build`
 
@@ -65,7 +68,7 @@ EXAMPLES
   $ widget-cli build
 ```
 
-_See code: [src/commands/build.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta.6/src/commands/build.ts)_
+_See code: [src/commands/build.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta.7/src/commands/build.ts)_
 
 ## `widget-cli dev`
 
@@ -79,7 +82,7 @@ DESCRIPTION
   Start the Vite development server using in-memory configuration
 ```
 
-_See code: [src/commands/dev/index.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta.6/src/commands/dev/index.ts)_
+_See code: [src/commands/dev/index.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta.7/src/commands/dev/index.ts)_
 
 ## `widget-cli hello PERSON`
 
@@ -103,7 +106,7 @@ EXAMPLES
   hello friend from oclif! (./src/commands/hello/index.ts)
 ```
 
-_See code: [src/commands/hello/index.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta.6/src/commands/hello/index.ts)_
+_See code: [src/commands/hello/index.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta.7/src/commands/hello/index.ts)_
 
 ## `widget-cli hello world`
 
@@ -121,7 +124,7 @@ EXAMPLES
   hello world! (./src/commands/hello/world.ts)
 ```
 
-_See code: [src/commands/hello/world.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta.6/src/commands/hello/world.ts)_
+_See code: [src/commands/hello/world.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta.7/src/commands/hello/world.ts)_
 
 ## `widget-cli help [COMMAND]`
 
@@ -450,7 +453,7 @@ EXAMPLES
   $ widget-cli publish
 ```
 
-_See code: [src/commands/publish.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta.6/src/commands/publish.ts)_
+_See code: [src/commands/publish.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta.7/src/commands/publish.ts)_
 
 ## `widget-cli publish-dev`
 
@@ -470,5 +473,6 @@ EXAMPLES
   $ widget-cli publish-dev
 ```
 
-_See code: [src/commands/publish-dev.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta.6/src/commands/publish-dev.ts)_
+_See code: [src/commands/publish-dev.ts](https://github.com/packages/widget-cli/blob/v1.0.0-beta.7/src/commands/publish-dev.ts)_
+
 <!-- commandsstop -->
