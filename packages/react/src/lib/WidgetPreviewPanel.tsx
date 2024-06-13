@@ -3,13 +3,15 @@ import { Layout, Card, Row, Col, Typography } from "antd";
 import { useMemo, useState, type FC } from "react";
 
 import styles from "./WidgetPreviewPanel.module.css";
-import { WidgetSettingContext } from "../hook";
+import { getWidgetSettingContext } from "../hook";
 
 const { Header, Content, Footer } = Layout;
 
 export const WidgetPreviewPanel: FC<{
   config: IWidget<string, Record<string, any>>;
 }> = ({ config }) => {
+  const WidgetSettingContext = getWidgetSettingContext();
+
   const [widgetInstanceConfig, setWidgetInstanceConfig] = useState({
     ...config.metadata,
   });
