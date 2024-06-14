@@ -2,7 +2,7 @@ import { defineWidget } from "@mylinkpi/widget-core";
 import React from "react";
 import { Form, Input } from "antd";
 import { AlertOutlined } from "@ant-design/icons";
-import { useWidgetSetting } from "@mylinkpi/widget-react";
+import { useWidgetSetting, useWidgetSharedState } from "@mylinkpi/widget-react";
 
 // @ts-ignore
 import styles from "./index.module.scss";
@@ -20,8 +20,28 @@ const config = defineWidget<BasicExampleConfig>()({
   basic: { defaultHeight: 8, defaultWidth: 8, minHeight: 8, minWidth: 8 },
   metadata: { title: "默认" },
   render: () => {
+    const [sharedState, setSharedState] = useWidgetSharedState<{
+      globalText: string;
+    }>();
+
     const [setting] = useWidgetSetting<BasicExampleConfig>();
-    return "hello world: " + setting.title;
+    return (
+      <div>
+        <h3>{"hello world: " + setting.title}</h3>
+        <Form>
+          <Form.Item>
+            <Input
+              defaultValue={sharedState.globalText}
+              onChange={(e) => {
+                setSharedState((draft) => {
+                  draft.globalText = e.target.value;
+                });
+              }}
+            />
+          </Form.Item>
+        </Form>
+      </div>
+    );
   },
   setting: () => {
     const [setting, setSetting] = useWidgetSetting<BasicExampleConfig>();
