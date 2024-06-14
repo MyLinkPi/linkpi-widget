@@ -1,5 +1,6 @@
 import { UnknownObject } from "@mylinkpi/widget-core";
 import { createContext, useContext } from "react";
+import { Draft } from "immer";
 
 const hackKey = "__mylinkpi__fixme__widget_setting_context__";
 
@@ -23,9 +24,11 @@ export const getWidgetSettingContext = <
   }>;
 };
 
+export type Updater<T extends UnknownObject> = (draft: Draft<T>) => void;
+
 export const useWidgetSetting = <T extends UnknownObject = UnknownObject>() => {
   const WidgetSettingContext = getWidgetSettingContext();
   const { value, setValue } = useContext(WidgetSettingContext);
 
-  return [value as T, setValue as (arg: T) => void] as const;
+  return [value as T, setValue as (arg: T | Updater<T>) => void] as const;
 };

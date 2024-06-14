@@ -1,9 +1,10 @@
-import { IWidget } from "@mylinkpi/widget-core";
+import { IWidget, UnknownObject } from "@mylinkpi/widget-core";
 import { Layout, Card, Row, Col, Typography } from "antd";
-import { useMemo, useState, type FC } from "react";
+import { useCallback, useMemo, useState, type FC } from "react";
+import { produce } from "immer";
 
 import styles from "./WidgetPreviewPanel.module.css";
-import { getWidgetSettingContext } from "../hook";
+import { Updater, getWidgetSettingContext } from "../hook";
 
 const { Header, Content, Footer } = Layout;
 
@@ -16,12 +17,29 @@ export const WidgetPreviewPanel: FC<{
     ...config.metadata,
   });
 
+  const setValue = useCallback(
+    (config: UnknownObject | Updater<UnknownObject>) => {
+      if (typeof config === "object") {
+        setWidgetInstanceConfig(config);
+        return;
+      }
+
+      if (typeof config === "function") {
+        setWidgetInstanceConfig(produce(config));
+        return;
+      }
+
+      throw Error("setValue 参数类型不对");
+    },
+    [],
+  );
+
   const contextValue = useMemo(
     () => ({
       value: widgetInstanceConfig,
-      setValue: setWidgetInstanceConfig,
+      setValue: setValue,
     }),
-    [widgetInstanceConfig],
+    [setValue, widgetInstanceConfig],
   );
 
   const [tab, setTab] = useState<string>("setting");
