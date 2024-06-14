@@ -4,7 +4,11 @@ import { useCallback, useMemo, useState, type FC } from "react";
 import { produce } from "immer";
 
 import styles from "./WidgetPreviewPanel.module.css";
-import { Updater, getWidgetSettingContext } from "../hook";
+import {
+  Updater,
+  getWidgetSettingContext,
+  getWidgetSharedStateContext,
+} from "../hook";
 
 const { Header, Content, Footer } = Layout;
 
@@ -12,12 +16,10 @@ export const WidgetPreviewPanel: FC<{
   config: IWidget<string, Record<string, any>>;
 }> = ({ config }) => {
   const WidgetSettingContext = getWidgetSettingContext();
-
   const [widgetInstanceConfig, setWidgetInstanceConfig] = useState({
     ...config.metadata,
   });
-
-  const setValue = useCallback(
+  const setWidgetSettingContextValue = useCallback(
     (config: UnknownObject | Updater<UnknownObject>) => {
       if (typeof config === "object") {
         setWidgetInstanceConfig(config);
@@ -33,13 +35,38 @@ export const WidgetPreviewPanel: FC<{
     },
     [],
   );
-
-  const contextValue = useMemo(
+  const widgetSettingContextValue = useMemo(
     () => ({
       value: widgetInstanceConfig,
-      setValue: setValue,
+      setValue: setWidgetSettingContextValue,
     }),
-    [setValue, widgetInstanceConfig],
+    [setWidgetSettingContextValue, widgetInstanceConfig],
+  );
+
+  const WidgetSharedStateContext = getWidgetSharedStateContext();
+  const [widgetSharedState, setwidgetSharedState] = useState({});
+  const setWidgetSharedStateContextValue = useCallback(
+    (config: UnknownObject | Updater<UnknownObject>) => {
+      if (typeof config === "object") {
+        setwidgetSharedState(config);
+        return;
+      }
+
+      if (typeof config === "function") {
+        setwidgetSharedState(produce(config));
+        return;
+      }
+
+      throw Error("setValue 参数类型不对");
+    },
+    [],
+  );
+  const widgetSharedStateContextValue = useMemo(
+    () => ({
+      value: widgetSharedState,
+      setValue: setWidgetSharedStateContextValue,
+    }),
+    [setWidgetSettingContextValue, widgetInstanceConfig],
   );
 
   const [tab, setTab] = useState<string>("setting");
@@ -90,27 +117,29 @@ export const WidgetPreviewPanel: FC<{
   };
 
   return (
-    <WidgetSettingContext.Provider value={contextValue}>
-      <Layout className="layout" style={{ minHeight: "100vh" }}>
-        <Header></Header>
-        <Content style={{ padding: 20 }}>
-          <Card
-            title="自定义组件开发"
-            tabList={[
-              { tab: "配置", key: "setting" },
-              { tab: "预览", key: "preview" },
-            ]}
-            onTabChange={setTab}
-          >
-            {tabContent[tab as keyof typeof tabContent]}
-          </Card>
-        </Content>
-        <Footer style={{ textAlign: "center" }}>
-          <Typography.Link href="https://mylinkpi.com/home">
-            @mylinkpi
-          </Typography.Link>
-        </Footer>
-      </Layout>
+    <WidgetSettingContext.Provider value={widgetSettingContextValue}>
+      <WidgetSharedStateContext.Provider value={widgetSharedStateContextValue}>
+        <Layout className="layout" style={{ minHeight: "100vh" }}>
+          <Header></Header>
+          <Content style={{ padding: 20 }}>
+            <Card
+              title="自定义组件开发"
+              tabList={[
+                { tab: "配置", key: "setting" },
+                { tab: "预览", key: "preview" },
+              ]}
+              onTabChange={setTab}
+            >
+              {tabContent[tab as keyof typeof tabContent]}
+            </Card>
+          </Content>
+          <Footer style={{ textAlign: "center" }}>
+            <Typography.Link href="https://mylinkpi.com/home">
+              @mylinkpi
+            </Typography.Link>
+          </Footer>
+        </Layout>
+      </WidgetSharedStateContext.Provider>
     </WidgetSettingContext.Provider>
   );
 };
