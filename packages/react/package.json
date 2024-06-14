@@ -22,7 +22,8 @@
     "**/*.css"
   ],
   "dependencies": {
-    "@mylinkpi/widget-core": "workspace:*"
+    "@mylinkpi/widget-core": "workspace:*",
+    "immer": "^10.1.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

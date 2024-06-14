@@ -31,7 +31,15 @@ const config = defineWidget<BasicExampleConfig>()({
         <Form.Item label="标题">
           <Input
             defaultValue={setting.title}
-            onChange={(e) => setSetting({ title: e.target.value })}
+            onChange={(e) => {
+              // 直接设置
+              // setSetting({ title: e.target.value });
+
+              // 单独设置字段
+              setSetting((draft) => {
+                draft.title = e.target.value;
+              });
+            }}
           />
         </Form.Item>
       </Form>
