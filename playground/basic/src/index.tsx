@@ -31,7 +31,7 @@ const config = defineWidget<BasicExampleConfig>()({
         <Form>
           <Form.Item>
             <Input
-              defaultValue={sharedState.globalText}
+              value={sharedState.globalText}
               onChange={(e) => {
                 setSharedState((draft) => {
                   draft.globalText = e.target.value;

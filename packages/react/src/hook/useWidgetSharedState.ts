@@ -1,5 +1,6 @@
 import { UnknownObject } from "@mylinkpi/widget-core";
 import { createContext, useContext } from "react";
+
 import { Updater } from "../utils";
 
 const hackKey = "__mylinkpi__fixme__widget_shared_state_context__";

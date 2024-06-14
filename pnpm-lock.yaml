@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@linkpi/lint':
-        specifier: ^1.0.4
-        version: 1.0.4
+        specifier: ^1.0.9
+        version: 1.0.9
       bumpp:
         specifier: ^9.4.1
         version: 9.4.1
@@ -959,8 +959,8 @@ packages:
     resolution: {integrity: sha512-f5DRIOZf7wxogefH03RjMPMdBF7ADTWUMoOs9kaJo06EfwF+aFhMZMDZxHg/Xe12hptN9xoZjGso2fdjapBRIA==}
     engines: {node: '>=10'}
 
-  '@linkpi/lint@1.0.4':
-    resolution: {integrity: sha512-ryO54NJNb9mvQlkV7MZwnFDqCGoLyL0J8xrt91O8oMhWN9TXzOkgS2n/T6J/jl1mU83RQO4qn3pA58g2FcK2TA==}
+  '@linkpi/lint@1.0.9':
+    resolution: {integrity: sha512-QeHkfta3J/KmyzkWaBEUakD6yXdfORhnABlDTBcCRPIWZY3eocWAEczsOyEzHdZAZYpHe8NeP17bLlvvVAOv8w==}
 
   '@microsoft/api-extractor-model@7.28.13':
     resolution: {integrity: sha512-39v/JyldX4MS9uzHcdfmjjfS6cYGAoXV+io8B5a338pkHiSt+gy2eXQ0Q7cGFJ7quSa1VqqlMdlPrB6sLR/cAw==}
@@ -5652,7 +5652,7 @@ snapshots:
       string-argv: 0.3.2
       type-detect: 4.0.8
 
-  '@linkpi/lint@1.0.4':
+  '@linkpi/lint@1.0.9':
     dependencies:
       eslint: 8.57.0
       eslint-plugin-simple-import-sort: 10.0.0(eslint@8.57.0)
