@@ -1,4 +1,5 @@
 import { CurrentUser } from "@linkpi/core";
+import { PiSDK } from "@linkpi/sdk";
 import { useContext, useMemo } from "react";
 import { pick } from "ramda";
 
@@ -24,6 +25,7 @@ export const getWidgetUtilsContext = () =>
     useTemplateList: (_orgId: string) => ({}) as TemplateList,
     useTemplateInfo: (_orgId: string, _templateId: string) =>
       ({}) as TemplateInfo,
+    piSDK: PiSDK,
   });
 
 export const useUrlQuerys = <
@@ -114,4 +116,11 @@ export const useTempateProp = (templateId: string, propIndex: number) => {
   }, [propIndex, tempInfo.prop]);
 
   return propInfo;
+};
+
+export const usePiSDK = () => {
+  const context = getWidgetUtilsContext();
+  const { piSDK } = useContext(context);
+
+  return piSDK;
 };
