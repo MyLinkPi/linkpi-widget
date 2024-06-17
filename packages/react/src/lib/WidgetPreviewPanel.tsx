@@ -11,6 +11,7 @@ import {
   Updater,
 } from "../hook";
 
+// @ts-ignore
 import styles from "./WidgetPreviewPanel.module.css";
 
 const { Header, Content, Footer } = Layout;
@@ -19,7 +20,14 @@ const useUrlQuerys = <
   T extends Record<string, string> = Record<string, string>,
 >() => qs.parse(window.location.search) as T;
 
-const widgetUtilsContextValue = { useUrlQuerys };
+// TODO 支持 mock 数据
+const widgetUtilsContextValue = {
+  useUrlQuerys,
+  useCurrentUser: () => ({}) as any,
+  useCurrentOrgId: () => "",
+  useTemplateList: () => [],
+  useTemplateInfo: () => ({}) as any,
+};
 
 export const WidgetPreviewPanel: FC<{
   config: IWidget<string, Record<string, any>>;

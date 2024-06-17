@@ -1,7 +1,7 @@
 import { UnknownObject } from "@mylinkpi/widget-core";
 import { useContext } from "react";
 
-import { getGlobalContext, Updater } from "../util";
+import { getGlobalContext, Updater } from "@/util";
 
 const hackKey = "widget_setting";
 

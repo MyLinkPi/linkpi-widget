@@ -2,7 +2,11 @@ import { defineWidget } from "@mylinkpi/widget-core";
 import React from "react";
 import { Form, Input } from "antd";
 import { AlertOutlined } from "@ant-design/icons";
-import { useWidgetSetting, useWidgetSharedState } from "@mylinkpi/widget-react";
+import {
+  useWidgetSetting,
+  useWidgetSharedState,
+  useCurrentUser,
+} from "@mylinkpi/widget-react";
 
 // @ts-ignore
 import styles from "./index.module.scss";
@@ -23,6 +27,7 @@ const config = defineWidget<BasicExampleConfig>()({
     const [sharedState, setSharedState] = useWidgetSharedState<{
       globalText: string;
     }>();
+    const currentUser = useCurrentUser();
 
     const [setting] = useWidgetSetting<BasicExampleConfig>();
     return (
