@@ -29,6 +29,7 @@
   },
   "devDependencies": {
     "@linkpi/core": "1.0.0-beta.36",
+    "@linkpi/sdk": "1.0.0-beta.37",
     "@mylinkpi/sharedb": "^3.3.2",
     "@types/ramda": "^0.30.0",
     "@types/react": "^18.2.66",
