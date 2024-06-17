@@ -23,7 +23,8 @@
   ],
   "dependencies": {
     "@mylinkpi/widget-core": "workspace:*",
-    "immer": "^10.1.1"
+    "immer": "^10.1.1",
+    "query-string": "^9.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

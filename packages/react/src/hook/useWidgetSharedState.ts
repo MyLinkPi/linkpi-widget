@@ -12,7 +12,7 @@ export const getWidgetSharedStateContext = <
   T extends UnknownObject = UnknownObject,
 >() =>
   getGlobalContext(hackKey, {
-    value: null,
+    value: null as unknown as T,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     setValue: (_newValue: T) => {},
   });
