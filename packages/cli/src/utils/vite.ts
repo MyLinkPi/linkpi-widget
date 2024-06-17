@@ -16,6 +16,7 @@ export const createViteBuildConfig = () => {
       rollupOptions: {
         plugins: [
           externalGlobals({
+            echarts: "echarts",
             react: "React",
             "react-dom": "ReactDOM",
           }),

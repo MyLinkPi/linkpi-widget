@@ -12,7 +12,7 @@ export const getWidgetSharedStateContext = <
   T extends UnknownObject = UnknownObject,
 >() =>
   getGlobalContext(hackKey, {
-    value: null as unknown as T,
+    value: {} as T,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     setValue: (_newValue: T) => {},
   });
@@ -22,11 +22,6 @@ export const useWidgetSharedState = <
 >() => {
   const WidgetSharedStateContext = getWidgetSharedStateContext();
   const { value, setValue } = useContext(WidgetSharedStateContext);
-
-  if (!value)
-    throw Error(
-      "useWidgetSharedState 使用位置不正确！仅可用于 widget render 组件内",
-    );
 
   return [value as T, setValue as (arg: T | Updater<T>) => void] as const;
 };

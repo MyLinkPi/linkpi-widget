@@ -26,6 +26,7 @@
     "@oclif/plugin-plugins": "^5",
     "@vitejs/plugin-react": "^4.3.0",
     "axios": "^1.7.2",
+    "echarts": "^5.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup-plugin-external-globals": "^0.10.0",
