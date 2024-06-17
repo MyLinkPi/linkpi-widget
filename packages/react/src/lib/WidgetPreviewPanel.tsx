@@ -1,20 +1,31 @@
 import { IWidget, UnknownObject } from "@mylinkpi/widget-core";
-import { Layout, Card, Row, Col, Typography } from "antd";
-import { useCallback, useMemo, useState, type FC } from "react";
+import { Card, Col, Layout, Row, Typography } from "antd";
 import { produce } from "immer";
+import qs from "query-string";
+import { type FC, useCallback, useMemo, useState } from "react";
 
-import styles from "./WidgetPreviewPanel.module.css";
 import {
-  Updater,
   getWidgetSettingContext,
   getWidgetSharedStateContext,
+  getWidgetUtilsContext,
+  Updater,
 } from "../hook";
 
+import styles from "./WidgetPreviewPanel.module.css";
+
 const { Header, Content, Footer } = Layout;
+
+const useUrlQuerys = <
+  T extends Record<string, string> = Record<string, string>,
+>() => qs.parse(window.location.search) as T;
+
+const widgetUtilsContextValue = { useUrlQuerys };
 
 export const WidgetPreviewPanel: FC<{
   config: IWidget<string, Record<string, any>>;
 }> = ({ config }) => {
+  const WidgetUtilsContext = getWidgetUtilsContext();
+
   const WidgetSettingContext = getWidgetSettingContext();
   const [widgetInstanceConfig, setWidgetInstanceConfig] = useState({
     ...config.metadata,
@@ -117,29 +128,33 @@ export const WidgetPreviewPanel: FC<{
   };
 
   return (
-    <WidgetSettingContext.Provider value={widgetSettingContextValue}>
-      <WidgetSharedStateContext.Provider value={widgetSharedStateContextValue}>
-        <Layout className="layout" style={{ minHeight: "100vh" }}>
-          <Header></Header>
-          <Content style={{ padding: 20 }}>
-            <Card
-              title="自定义组件开发"
-              tabList={[
-                { tab: "配置", key: "setting" },
-                { tab: "预览", key: "preview" },
-              ]}
-              onTabChange={setTab}
-            >
-              {tabContent[tab as keyof typeof tabContent]}
-            </Card>
-          </Content>
-          <Footer style={{ textAlign: "center" }}>
-            <Typography.Link href="https://mylinkpi.com/home">
-              @mylinkpi
-            </Typography.Link>
-          </Footer>
-        </Layout>
-      </WidgetSharedStateContext.Provider>
-    </WidgetSettingContext.Provider>
+    <WidgetUtilsContext.Provider value={widgetUtilsContextValue}>
+      <WidgetSettingContext.Provider value={widgetSettingContextValue}>
+        <WidgetSharedStateContext.Provider
+          value={widgetSharedStateContextValue}
+        >
+          <Layout className="layout" style={{ minHeight: "100vh" }}>
+            <Header></Header>
+            <Content style={{ padding: 20 }}>
+              <Card
+                title="自定义组件开发"
+                tabList={[
+                  { tab: "配置", key: "setting" },
+                  { tab: "预览", key: "preview" },
+                ]}
+                onTabChange={setTab}
+              >
+                {tabContent[tab as keyof typeof tabContent]}
+              </Card>
+            </Content>
+            <Footer style={{ textAlign: "center" }}>
+              <Typography.Link href="https://mylinkpi.com/home">
+                @mylinkpi
+              </Typography.Link>
+            </Footer>
+          </Layout>
+        </WidgetSharedStateContext.Provider>
+      </WidgetSettingContext.Provider>
+    </WidgetUtilsContext.Provider>
   );
 };
