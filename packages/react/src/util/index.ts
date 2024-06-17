@@ -1,6 +1,8 @@
-import { UnknownObject } from "@mylinkpi/widget-core";
+// import { UnknownObject } from "@mylinkpi/widget-core";
 import { Draft } from "immer";
 import { type Context, createContext } from "react";
+
+type UnknownObject = Record<string, unknown>;
 
 export type Updater<T extends UnknownObject> = (draft: Draft<T>) => void;
 
