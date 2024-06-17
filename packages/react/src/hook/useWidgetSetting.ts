@@ -1,29 +1,21 @@
 import { UnknownObject } from "@mylinkpi/widget-core";
-import { createContext, useContext } from "react";
+import { useContext } from "react";
 
-import { Updater } from "../utils";
+import { getGlobalContext, Updater } from "../util";
 
-const hackKey = "__mylinkpi__fixme__widget_setting_context__";
+const hackKey = "widget_setting";
 
 /**
  * 返回单例的 context
  */
 export const getWidgetSettingContext = <
   T extends UnknownObject = UnknownObject,
->() => {
-  if (!window[hackKey as any]) {
-    // @ts-ignore
-    window[hackKey as any] = createContext({
-      value: {},
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      setValue: (_newValue: T) => {},
-    });
-  }
-  return window[hackKey as any] as unknown as React.Context<{
-    value: T;
-    setValue: (_newValue: T) => void;
-  }>;
-};
+>() =>
+  getGlobalContext(hackKey, {
+    value: {},
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    setValue: (_newValue: T) => {},
+  });
 
 export const useWidgetSetting = <T extends UnknownObject = UnknownObject>() => {
   const WidgetSettingContext = getWidgetSettingContext();
