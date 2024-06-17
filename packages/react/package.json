@@ -27,16 +27,19 @@
     "query-string": "^9.0.0"
   },
   "devDependencies": {
+    "@linkpi/core": "1.0.0-beta.36",
+    "@linkpi/sdk": "1.0.0-alpha.7",
+    "@mylinkpi/sharedb": "^3.3.2",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.2.0",
+    "@typescript-eslint/eslint-plugin": "^7.13.0",
+    "@typescript-eslint/parser": "^7.13.0",
     "@vitejs/plugin-react-swc": "^3.7.0",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
     "typescript": "^5.4.5",
-    "vite": "^5.2.13",
+    "vite": "^5.3.1",
     "vite-plugin-dts": "^3.9.1",
     "vite-plugin-lib-inject-css": "^2.1.1"
   },
