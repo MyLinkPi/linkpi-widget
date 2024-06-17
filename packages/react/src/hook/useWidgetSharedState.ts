@@ -1,30 +1,21 @@
 import { UnknownObject } from "@mylinkpi/widget-core";
-import { createContext, useContext } from "react";
+import { useContext } from "react";
 
-import { Updater } from "../utils";
+import { getGlobalContext, Updater } from "../util";
 
-const hackKey = "__mylinkpi__fixme__widget_shared_state_context__";
+const hackKey = "widget_shared_state";
 
 /**
  * 返回单例的 context
  */
 export const getWidgetSharedStateContext = <
   T extends UnknownObject = UnknownObject,
->() => {
-  if (!window[hackKey as any]) {
-    // @ts-ignore
-    window[hackKey as any] = createContext({
-      value: null,
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      setValue: (_newValue: T) => {},
-    });
-  }
-  return window[hackKey as any] as unknown as React.Context<{
-    value: T;
-    setValue: (_newValue: T) => void;
-  }>;
-};
-
+>() =>
+  getGlobalContext(hackKey, {
+    value: null,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    setValue: (_newValue: T) => {},
+  });
 
 export const useWidgetSharedState = <
   T extends UnknownObject = UnknownObject,

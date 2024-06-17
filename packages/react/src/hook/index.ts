@@ -1,3 +1,4 @@
-export { type Updater } from "../utils";
+export { type Updater } from "../util";
+export * from './global'
 export * from "./useWidgetSetting";
 export * from "./useWidgetSharedState";
