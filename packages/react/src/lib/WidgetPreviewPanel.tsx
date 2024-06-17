@@ -27,6 +27,7 @@ const widgetUtilsContextValue = {
   useCurrentOrgId: () => "",
   useTemplateList: () => [],
   useTemplateInfo: () => ({}) as any,
+  PiSDK: {} as any,
 };
 
 export const WidgetPreviewPanel: FC<{
