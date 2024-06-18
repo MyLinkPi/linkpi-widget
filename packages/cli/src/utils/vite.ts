@@ -4,6 +4,8 @@ import { InlineConfig } from "vite";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 import envCompatible from "vite-plugin-env-compatible";
 
+import "./polyfill.js"
+
 export const createViteBuildConfig = () => {
   const options: InlineConfig = {
     build: {

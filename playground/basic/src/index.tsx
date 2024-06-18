@@ -3,9 +3,9 @@ import React from "react";
 import { Form, Input } from "antd";
 import { AlertOutlined } from "@ant-design/icons";
 import {
+  useCurrentUser,
   useWidgetSetting,
   useWidgetSharedState,
-  useCurrentUser,
 } from "@mylinkpi/widget-react";
 
 // @ts-ignore
@@ -33,6 +33,7 @@ const config = defineWidget<BasicExampleConfig>()({
     return (
       <div>
         <h3>{"hello world: " + setting.title}</h3>
+        <h4>{currentUser.name || "老王"}</h4>
         <Form>
           <Form.Item>
             <Input
