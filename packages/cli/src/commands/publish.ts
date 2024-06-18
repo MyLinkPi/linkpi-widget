@@ -33,7 +33,9 @@ export default class Publish extends Command {
       console.log("scriptId", scriptId);
 
       global.React = React;
-      const config: any = await import(process.cwd() + "/dist/index.js");
+      const modulePath =
+        "file://" + path.resolve(process.cwd(), "dist", "index.js");
+      const config: any = await import(modulePath);
       const widgetConfig = config.default;
 
       await addWidget({
