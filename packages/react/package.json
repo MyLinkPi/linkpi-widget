@@ -22,7 +22,6 @@
     "**/*.css"
   ],
   "dependencies": {
-    "@linkpi/request": "1.0.0-beta.39",
     "@mylinkpi/widget-core": "workspace:*",
     "immer": "^10.1.1",
     "query-string": "^9.0.0",
@@ -30,6 +29,7 @@
   },
   "devDependencies": {
     "@linkpi/core": "1.0.0-beta.39",
+    "@linkpi/request": "1.0.0-beta.39",
     "@linkpi/sdk": "1.0.0-beta.39",
     "@mylinkpi/sharedb": "^3.3.2",
     "@types/ramda": "^0.30.0",
