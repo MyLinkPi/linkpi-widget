@@ -22,7 +22,7 @@ export const getWidgetUtilsContext = () =>
     useUrlQuerys: <T extends Record<string, string>>() => ({}) as unknown as T,
     useCurrentUser: () => ({}) as unknown as CurrentUserForWidget,
     useCurrentOrgId: () => "" as string,
-    useTemplateList: (_orgId: string) => ({}) as TemplateList,
+    useTemplateList: (_orgId: string) => [] as TemplateList,
     useTemplateInfo: (_orgId: string, _templateId: string) =>
       ({}) as TemplateInfo,
     piSDK: PiSDK,
@@ -91,16 +91,15 @@ export const useTempatePropList = (templateId: string) => {
 
   const propList = useMemo(
     () =>
-      tempInfo.prop
+      (tempInfo?.prop
         .map((p, propIndex) => ({
           ...p,
           propIndex,
         }))
         .filter((p) => p.name && p.type)
-        .map((p) =>
-          pick(["name", "type", "propIndex"], p),
-        ) as unknown as TemplatePropList,
-    [tempInfo.prop],
+        .map((p) => pick(["name", "type", "propIndex"], p)) ||
+        []) as unknown as TemplatePropList,
+    [tempInfo?.prop],
   );
 
   return propList;
