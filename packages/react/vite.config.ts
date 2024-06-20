@@ -1,7 +1,7 @@
 import react from "@vitejs/plugin-react-swc";
 import { resolve } from "path";
 import { defineConfig } from "vite";
-import dts from "vite-plugin-dts";
+// import dts from "vite-plugin-dts";
 // import { dts } from "rollup-plugin-dts";
 import tsconfigPaths from "vite-tsconfig-paths";
 import dtsBundleGenerator from "vite-plugin-dts-bundle-generator";
@@ -15,7 +15,7 @@ export default defineConfig({
     libInjectCss(),
     dtsBundleGenerator({
       fileName: "main.d.ts",
-      libraries: { inlinedLibraries: ["@linkpi/core"] },
+      libraries: { inlinedLibraries: ["@linkpi/core", "@linkpi/sdk"] },
     }),
     // dts({
     //   rollupTypes: true,
