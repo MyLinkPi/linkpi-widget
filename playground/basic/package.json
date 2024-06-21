@@ -16,12 +16,12 @@
     "@mylinkpi/widget-cli": "workspace:*",
     "@mylinkpi/widget-core": "workspace:*",
     "@mylinkpi/widget-react": "workspace:*",
-    "antd": "^4"
+    "antd": "^4.24.16"
   },
   "devDependencies": {
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "sass": "^1.77.5"
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "sass": "^1.77.6"
   },
   "peerDependencies": {
     "react": "18.2.0",
