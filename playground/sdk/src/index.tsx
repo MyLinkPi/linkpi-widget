@@ -1,5 +1,5 @@
 import { defineWidget } from "@mylinkpi/widget-core";
-import React, { lazy, useEffect, useMemo } from "react";
+import React, { lazy, useEffect, useMemo, useState } from "react";
 import { Form, Input, Select } from "antd";
 import { AlertOutlined } from "@ant-design/icons";
 import {
@@ -11,12 +11,7 @@ import {
   usePiSDK,
   useCurrentOrgId,
 } from "@mylinkpi/widget-react";
-import {
-  JsonView,
-  allExpanded,
-  darkStyles,
-  defaultStyles,
-} from "react-json-view-lite";
+import { JsonView, allExpanded, defaultStyles } from "react-json-view-lite";
 
 import "react-json-view-lite/dist/index.css";
 // @ts-ignore
@@ -42,15 +37,29 @@ const config = defineWidget<BasicSDKExampleConfig>()({
     const piSDK = usePiSDK();
 
     const [setting] = useWidgetSetting<BasicSDKExampleConfig>();
+    const [result, setResult] = useState({});
 
     useEffect(() => {
       (async () => {
-        const res = await piSDK.tableHeaderManager.query({
-          org_id: orgId,
-          limit: 20,
-          offset: 0,
+        const res = await piSDK.getNodeList({
+          orgId,
+          pageSize: 20,
+          page: 1,
+          condition: [
+            { key: "templateId", op: "intersect", input: [setting.templateId] },
+            {
+              key: "prop",
+              index: setting.propIndex,
+              op: "textInclude",
+              input: setting.searchValue,
+              extends: {
+                type: "text",
+              },
+            },
+          ],
         });
         console.log("query result: ", res);
+        setResult(res);
       })();
     }, []);
 
@@ -58,11 +67,13 @@ const config = defineWidget<BasicSDKExampleConfig>()({
       <div className={styles.content}>
         <h1></h1>
         <h4>{currentUser.name || "老王"}</h4>
-        <JsonView
-          data={{ foo: "hello" }}
-          shouldExpandNode={allExpanded}
-          style={defaultStyles}
-        />
+        <div className={styles.json}>
+          <JsonView
+            data={result}
+            shouldExpandNode={allExpanded}
+            style={defaultStyles}
+          />
+        </div>
       </div>
     );
   },
@@ -102,7 +113,7 @@ const config = defineWidget<BasicSDKExampleConfig>()({
         <Form.Item label="属性" name="propIndex">
           <Select options={propSelectOptions} />
         </Form.Item>
-        <Form.Item label="搜索值" name="search">
+        <Form.Item label="搜索值" name="searchValue">
           <Input />
         </Form.Item>
       </Form>
