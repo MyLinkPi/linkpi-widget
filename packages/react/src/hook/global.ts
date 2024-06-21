@@ -24,8 +24,8 @@ export const getWidgetUtilsContext = () =>
     useCurrentOrgId: () => "" as string,
     useTemplateList: (_orgId: string) => [] as TemplateList,
     useTemplateInfo: (_orgId: string, _templateId: string) =>
-      ({}) as TemplateInfo,
-    piSDK: PiSDK,
+      ({}) as TemplateInfo | undefined,
+    piSDK: {} as PiSDK,
   });
 
 export const useUrlQuerys = <
@@ -110,9 +110,10 @@ export const useTempatePropList = (templateId: string) => {
  */
 export const useTempateProp = (templateId: string, propIndex: number) => {
   const tempInfo = useTempateInfo(templateId);
+
   const propInfo = useMemo(() => {
-    return tempInfo.prop[propIndex];
-  }, [propIndex, tempInfo.prop]);
+    return tempInfo?.prop?.[propIndex];
+  }, [propIndex, tempInfo?.prop]);
 
   return propInfo;
 };
