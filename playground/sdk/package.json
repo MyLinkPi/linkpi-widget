@@ -1,5 +1,5 @@
 {
-  "name": "basic-example",
+  "name": "sdk-example",
   "version": "1.0.0",
   "description": "",
   "type": "module",
@@ -17,6 +17,7 @@
     "@mylinkpi/widget-cli": "workspace:*",
     "@mylinkpi/widget-core": "workspace:*",
     "@mylinkpi/widget-react": "workspace:*",
+    "react-json-view-lite": "^1.4.0",
     "antd": "^4.24.16"
   },
   "devDependencies": {
