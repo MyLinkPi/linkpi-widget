@@ -1,15 +1,15 @@
 import { defineWidget } from "@mylinkpi/widget-core";
-import React, { lazy, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Form, Input, Select } from "antd";
 import { AlertOutlined } from "@ant-design/icons";
 import {
   useCurrentUser,
   useWidgetSetting,
-  useWidgetSharedState,
   useTemplateList,
   useTempatePropList,
   usePiSDK,
   useCurrentOrgId,
+  useTempateProp,
 } from "@mylinkpi/widget-react";
 import { JsonView, allExpanded, defaultStyles } from "react-json-view-lite";
 
@@ -38,6 +38,7 @@ const config = defineWidget<BasicSDKExampleConfig>()({
 
     const [setting] = useWidgetSetting<BasicSDKExampleConfig>();
     const [result, setResult] = useState({});
+    const propInfo = useTempateProp(setting.templateId, setting.propIndex || 0);
 
     useEffect(() => {
       (async () => {
@@ -50,18 +51,21 @@ const config = defineWidget<BasicSDKExampleConfig>()({
             {
               key: "prop",
               index: setting.propIndex,
-              op: "textInclude",
+              op: propInfo?.type === "text" ? "textInclude" : "intersect",
               input: setting.searchValue,
-              extends: {
-                type: "text",
-              },
+              extends:
+                propInfo?.type === "text"
+                  ? {
+                      type: "text",
+                    }
+                  : undefined,
             },
           ],
         });
         console.log("query result: ", res);
         setResult(res);
       })();
-    }, []);
+    }, [propInfo]);
 
     return (
       <div className={styles.content}>
@@ -97,6 +101,8 @@ const config = defineWidget<BasicSDKExampleConfig>()({
       () => propList.map((p) => ({ value: p.propIndex, label: p.name })),
       [propList],
     );
+    const propIndex = Form.useWatch(["propIndex"], form);
+    const propInfo = useTempateProp(templateId, propIndex);
 
     return (
       <Form
@@ -113,9 +119,21 @@ const config = defineWidget<BasicSDKExampleConfig>()({
         <Form.Item label="属性" name="propIndex">
           <Select options={propSelectOptions} />
         </Form.Item>
-        <Form.Item label="搜索值" name="searchValue">
-          <Input />
-        </Form.Item>
+        {propInfo?.type === "text" && (
+          <Form.Item label="搜索值" name="searchValue" key="text">
+            <Input />
+          </Form.Item>
+        )}
+        {propInfo?.type === "enum" && (
+          <Form.Item label="搜索值" name="searchValue" key="enum">
+            <Select
+              mode="multiple"
+              options={
+                propInfo.extend?.map((i) => ({ label: i, value: i })) || []
+              }
+            />
+          </Form.Item>
+        )}
       </Form>
     );
   },
