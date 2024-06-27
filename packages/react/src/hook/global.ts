@@ -1,4 +1,4 @@
-import { CurrentUser } from "@linkpi/core";
+import { CurrentUser, PiNodeMetaData } from "@linkpi/core";
 import { PiSDK } from "@linkpi/sdk";
 import { useContext, useMemo } from "react";
 import { pick } from "ramda";
@@ -16,6 +16,22 @@ type TemplateList = Pick<
 type TemplatePropList = (Pick<CurrentUser.TemplateProp, "name" | "type"> & {
   propIndex: number;
 })[];
+type PiNode = {
+  id: string;
+  title: string;
+  creator: string;
+  createTime: number;
+  updateTime: number;
+  tempInfo: {
+    id: string;
+    nodeSeq: number | null;
+    prop: any[];
+    statusProp: any[];
+    status: number;
+  };
+  prop: PiNodeMetaData["e"];
+  status: CurrentUser.taskStatus[] | undefined;
+};
 
 export const getWidgetUtilsContext = () =>
   getGlobalContext(hackKey, {
@@ -26,6 +42,7 @@ export const getWidgetUtilsContext = () =>
     useTemplateInfo: (_orgId: string, _templateId: string) =>
       ({}) as TemplateInfo | undefined,
     piSDK: {} as PiSDK,
+    useCurrentNode: () => ({}) as PiNode,
   });
 
 export const useUrlQuerys = <
@@ -123,4 +140,14 @@ export const usePiSDK = () => {
   const { piSDK } = useContext(context);
 
   return piSDK;
+};
+
+/**
+ * 获取当前节点信息
+ */
+export const useCurrentNode = () => {
+  const context = getWidgetUtilsContext();
+  const { useCurrentNode: _useCurrentNode } = useContext(context);
+
+  return _useCurrentNode();
 };
