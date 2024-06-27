@@ -24,13 +24,21 @@ type PiNode = {
   updateTime: number;
   tempInfo: {
     id: string;
-    nodeSeq: number | null;
+    status: number;
     prop: any[];
     statusProp: any[];
-    status: number;
+    nodeSeq: string;
   };
   prop: PiNodeMetaData["e"];
   status: CurrentUser.taskStatus[] | undefined;
+  rootNodeId: string;
+};
+
+type NodeTreeData = {
+  value: string;
+  title: string;
+  children: NodeTreeData[];
+  disabled?: boolean;
 };
 
 export const getWidgetUtilsContext = () =>
@@ -43,6 +51,7 @@ export const getWidgetUtilsContext = () =>
       ({}) as TemplateInfo | undefined,
     piSDK: {} as PiSDK,
     useCurrentNode: () => ({}) as PiNode,
+    useNodeTreeData: () => [] as NodeTreeData[],
   });
 
 export const useUrlQuerys = <
@@ -150,4 +159,11 @@ export const useCurrentNode = () => {
   const { useCurrentNode: _useCurrentNode } = useContext(context);
 
   return _useCurrentNode();
+};
+
+export const useNodeTreeData = () => {
+  const context = getWidgetUtilsContext();
+  const { useNodeTreeData: _useNodeTreeData } = useContext(context);
+
+  return _useNodeTreeData();
 };

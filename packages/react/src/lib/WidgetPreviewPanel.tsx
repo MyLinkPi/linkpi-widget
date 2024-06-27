@@ -28,6 +28,8 @@ const widgetUtilsContextValue = {
   useTemplateList: () => [],
   useTemplateInfo: () => ({}) as any,
   piSDK: {} as any,
+  useCurrentNode: () => ({}) as any,
+  useNodeTreeData: () => [],
 };
 
 export const WidgetPreviewPanel: FC<{
