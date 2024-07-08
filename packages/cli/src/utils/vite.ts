@@ -33,7 +33,7 @@ export const createViteBuildConfig = () => {
     plugins: [
       envCompatible(),
       cssInjectedByJsPlugin(),
-      vitePluginMomentToDayjs(),
+      vitePluginMomentToDayjs({ preset: "antd" }),
     ],
     root: process.cwd(),
   };
