@@ -1,5 +1,5 @@
-import { CurrentUser, PiNodeMetaData } from "@linkpi/core";
-import { PiSDK } from "@linkpi/sdk";
+import { CurrentUser } from "@linkpi/core";
+import { PiSDK,NodeData } from "@linkpi/sdk";
 import { useContext, useMemo } from "react";
 import { pick } from "ramda";
 
@@ -16,23 +16,6 @@ type TemplateList = Pick<
 type TemplatePropList = (Pick<CurrentUser.TemplateProp, "name" | "type"> & {
   propIndex: number;
 })[];
-type PiNode = {
-  id: string;
-  title: string;
-  creator: string;
-  createTime: number;
-  updateTime: number;
-  tempInfo: {
-    id: string;
-    status: number;
-    prop: any[];
-    statusProp: any[];
-    nodeSeq: string;
-  };
-  prop: PiNodeMetaData["e"];
-  status: CurrentUser.taskStatus[] | undefined;
-  rootNodeId: string;
-};
 
 type NodeTreeData = {
   value: string;
@@ -50,7 +33,7 @@ export const getWidgetUtilsContext = () =>
     useTemplateInfo: (_orgId: string, _templateId: string) =>
       ({}) as TemplateInfo | undefined,
     piSDK: {} as PiSDK,
-    useCurrentNode: () => ({}) as PiNode,
+    useCurrentNode: () => ({}) as NodeData,
     useNodeTreeData: () => [] as NodeTreeData[],
   });
 

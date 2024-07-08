@@ -4,6 +4,7 @@ import { Form, Input, Select } from "antd";
 import { AlertOutlined } from "@ant-design/icons";
 import {
   useCurrentUser,
+  useCurrentNode,
   useWidgetSetting,
   useTemplateList,
   useTempatePropList,
@@ -40,6 +41,8 @@ const config = defineWidget<BasicSDKExampleConfig>()({
     const [result, setResult] = useState({});
     const propInfo = useTempateProp(setting.templateId, setting.propIndex || 0);
 
+    const nodeData = useCurrentNode();
+
     useEffect(() => {
       (async () => {
         const res = await piSDK.getNodeList({
@@ -74,6 +77,14 @@ const config = defineWidget<BasicSDKExampleConfig>()({
         <div className={styles.json}>
           <JsonView
             data={result}
+            shouldExpandNode={allExpanded}
+            style={defaultStyles}
+          />
+        </div>
+        <h4>当前节点: {nodeData.title}</h4>
+        <div className={styles.json}>
+          <JsonView
+            data={nodeData}
             shouldExpandNode={allExpanded}
             style={defaultStyles}
           />

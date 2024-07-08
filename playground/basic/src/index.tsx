@@ -6,6 +6,7 @@ import {
   useCurrentUser,
   useWidgetSetting,
   useWidgetSharedState,
+  ViewList
 } from "@mylinkpi/widget-react";
 
 // @ts-ignore
