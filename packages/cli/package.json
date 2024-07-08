@@ -33,8 +33,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "vite": "^5.3.1",
     "vite-plugin-css-injected-by-js": "^3.5.1",
-    "vite-plugin-env-compatible": "^2.0.1",
-    "vite-plugin-moment-to-dayjs": "^1.0.7"
+    "vite-plugin-env-compatible": "^2.0.1"
   },
   "devDependencies": {
     "@oclif/test": "^4.0.4",

@@ -71,9 +71,6 @@ importers:
       vite-plugin-env-compatible:
         specifier: ^2.0.1
         version: 2.0.1
-      vite-plugin-moment-to-dayjs:
-        specifier: ^1.0.7
-        version: 1.0.7(dayjs@1.11.11)
     devDependencies:
       '@oclif/test':
         specifier: ^4.0.4
@@ -5389,11 +5386,6 @@ packages:
     resolution: {integrity: sha512-RIMeVnqBK/8I0E9nnQWzws6pdj5ilRMPJSnXYb6nWxNR4EmDPnksnb/ACoR5Fy7QfzULqS4gtQMrjwnNCC9zoA==}
     peerDependencies:
       vite: '*'
-
-  vite-plugin-moment-to-dayjs@1.0.7:
-    resolution: {integrity: sha512-mCAeqNsp/99QiXRUWCYzzy/EOGGm30lncvsw32TvagHmn4QyPY0CsQ9opIGKwqAyFiqPXLanPl0ZilV9aOlf1g==}
-    peerDependencies:
-      dayjs: '*'
 
   vite-tsconfig-paths@4.3.2:
     resolution: {integrity: sha512-0Vd/a6po6Q+86rPlntHye7F31zA2URZMbH8M3saAZ/xR9QoGN/L21bxEGfXdWmFdNkqPpRdxFT7nmNe12e9/uA==}
@@ -12033,10 +12025,6 @@ snapshots:
       magic-string: 0.30.10
       picocolors: 1.0.1
       vite: 5.3.1(@types/node@20.14.0)(sass@1.77.6)
-
-  vite-plugin-moment-to-dayjs@1.0.7(dayjs@1.11.11):
-    dependencies:
-      dayjs: 1.11.11
 
   vite-tsconfig-paths@4.3.2(typescript@5.5.2)(vite@5.3.1(@types/node@20.14.0)(sass@1.77.6)):
     dependencies:

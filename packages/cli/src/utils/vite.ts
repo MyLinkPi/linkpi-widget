@@ -3,8 +3,6 @@ import externalGlobals from "rollup-plugin-external-globals";
 import { InlineConfig } from "vite";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 import envCompatible from "vite-plugin-env-compatible";
-// @ts-ignore
-import vitePluginMomentToDayjs from "vite-plugin-moment-to-dayjs";
 
 import "./polyfill.js";
 
@@ -33,7 +31,6 @@ export const createViteBuildConfig = () => {
     plugins: [
       envCompatible(),
       cssInjectedByJsPlugin(),
-      vitePluginMomentToDayjs({ preset: "antd" }),
     ],
     root: process.cwd(),
   };
