@@ -1,13 +1,14 @@
 import { defineWidget } from "@mylinkpi/widget-core";
 import React from "react";
-import { Form, Input } from "antd";
+import { Form, Input, TimePicker } from "antd";
 import { AlertOutlined } from "@ant-design/icons";
 import {
   useCurrentUser,
   useWidgetSetting,
   useWidgetSharedState,
-  ViewList
+  ViewList,
 } from "@mylinkpi/widget-react";
+import dayjs from 'dayjs'
 
 // @ts-ignore
 import styles from "./index.module.scss";
@@ -68,6 +69,9 @@ const config = defineWidget<BasicExampleConfig>()({
               });
             }}
           />
+        </Form.Item>
+        <Form.Item label="时间">
+          <TimePicker value={dayjs() as any}/>
         </Form.Item>
       </Form>
     );

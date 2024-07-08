@@ -3,8 +3,10 @@ import externalGlobals from "rollup-plugin-external-globals";
 import { InlineConfig } from "vite";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
 import envCompatible from "vite-plugin-env-compatible";
+// @ts-ignore
+import vitePluginMomentToDayjs from "vite-plugin-moment-to-dayjs";
 
-import "./polyfill.js"
+import "./polyfill.js";
 
 export const createViteBuildConfig = () => {
   const options: InlineConfig = {
@@ -28,7 +30,11 @@ export const createViteBuildConfig = () => {
     define: {
       "process.env": process.env,
     },
-    plugins: [envCompatible(), cssInjectedByJsPlugin()],
+    plugins: [
+      envCompatible(),
+      cssInjectedByJsPlugin(),
+      vitePluginMomentToDayjs(),
+    ],
     root: process.cwd(),
   };
 

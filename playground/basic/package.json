@@ -17,7 +17,8 @@
     "@mylinkpi/widget-cli": "workspace:*",
     "@mylinkpi/widget-core": "workspace:*",
     "@mylinkpi/widget-react": "workspace:*",
-    "antd": "^4.24.16"
+    "antd": "^4.24.16",
+    "dayjs": "^1.11.11"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
