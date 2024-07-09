@@ -27,8 +27,6 @@
     "access": "public"
   },
   "dependencies": {
-    "@linkpi/request": "1.0.0-beta.58",
-    "@linkpi/sdk": "1.0.0-beta.58",
     "unbuild": "2.0.0"
   },
   "peerDependencies": {
