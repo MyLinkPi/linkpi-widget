@@ -16,7 +16,7 @@ export const uploadScript = (content: string) =>
 
 type IWidget = {
   // config: any;
-  name: "折线图";
+  name: string;
   script_id: string;
   widget_id: string;
 };

@@ -1,12 +1,5 @@
 import type { IWidget, UnknownObject } from "./types";
 
-export type {
-  IWidget,
-  WidgetPreivew,
-  WidgetRender,
-  WidgetSetting,
-} from "./types";
-
 /**
  * 定义组件，并且做类型检查
  *
@@ -20,6 +13,11 @@ export type {
  */
 export const defineWidget =
   <T extends UnknownObject = UnknownObject>() =>
-  <P extends string>(config: IWidget<P, T>) => {
+  <P extends string>(_config: Omit<IWidget<P, T>, "title" | "id">) => {
+    const config = {
+      id: __WIDGET_ID__,
+      title: __WIDGET_TITLE__,
+      ..._config,
+    };
     return config;
   };

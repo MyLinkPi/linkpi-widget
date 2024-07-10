@@ -23,10 +23,5 @@
   "include": [
     "src/**/*",
     "./typing.d.ts"
-  ],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
   ]
 }

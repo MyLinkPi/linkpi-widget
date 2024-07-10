@@ -2,7 +2,7 @@ import { FC, ReactNode } from "react";
 
 export type UnknownObject = Record<string, unknown>;
 
-interface IWidgetBasic {
+export interface IWidgetBasic {
   maxCount?: number;
   minCount?: number;
   deletable?: boolean;
@@ -15,7 +15,7 @@ interface IWidgetBasic {
   dynamicHeight?: boolean;
 }
 
-interface IWidgetSize {
+export interface IWidgetSize {
   /**
    * 右侧操作栏的宽度
    */

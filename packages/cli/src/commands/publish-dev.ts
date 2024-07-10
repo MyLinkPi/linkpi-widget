@@ -1,7 +1,7 @@
 import { Command, Flags } from "@oclif/core";
+import { consola } from "consola";
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import * as React from "react";
 import { build } from "vite";
 
 import {
@@ -11,6 +11,7 @@ import {
   uploadScript,
 } from "../services/index-dev.js";
 import { createViteBuildConfig } from "../utils/vite.js";
+import { getWidgetConfig } from "../utils/index.js";
 
 export default class PublishDev extends Command {
   static description = "Build and publish-dev your widget";
@@ -24,51 +25,57 @@ export default class PublishDev extends Command {
 
   async buildAndUpload() {
     try {
+      const widgetConfig = await getWidgetConfig();
       // 使用Vite打包
-      await build(createViteBuildConfig());
+      await build(
+        createViteBuildConfig({
+          widgetId: widgetConfig.id,
+          widgetTitle: widgetConfig.name,
+        }),
+      );
 
       // 调用上传API
       // 示例使用axios上传（需先安装axios）
       const filePath = path.join(process.cwd(), "dist/index.js");
       const fileContent = readFileSync(filePath, "utf8");
 
-      this.log("uploading script");
+      consola.info("uploading script");
       const res = await uploadScript(fileContent);
       const scriptId = res.data.id;
 
-      console.log("scriptId", scriptId);
+      consola.info("scriptId", scriptId);
 
-      global.React = React;
-      const modulePath =
-        "file://" + path.resolve(process.cwd(), "dist", "index.js");
-      const config: any = await import(modulePath);
-      const widgetConfig = config.default;
+      // global.React = React;
+      // const modulePath =
+      //   "file://" + path.resolve(process.cwd(), "dist", "index.js");
+      // const config: any = await import(modulePath);
+      // const widgetConfig = config.default;
 
       const info = await getWidget(widgetConfig.id);
       if (info) {
-        this.log("updating widget");
+        consola.info("updating widget");
         await updateWidget({
-          name: widgetConfig.title,
+          name: widgetConfig.name,
           script_id: scriptId,
           widget_id: widgetConfig.id,
         });
       } else {
-        this.log("adding widget");
+        consola.info("adding widget");
         await addWidget({
-          name: widgetConfig.title,
+          name: widgetConfig.name,
           script_id: scriptId,
           widget_id: widgetConfig.id,
         });
       }
 
-      this.log("Widget published successfully.");
+      consola.success("Widget published successfully.");
     } catch (error) {
-      this.error(`Error publishing widget: ${error}`);
+      consola.error(`Error publishing widget: ${error}`);
     }
   }
 
   async run() {
-    this.log("Building and publishing the widget...");
+    consola.start("Building and publishing the widget...");
     await this.buildAndUpload();
   }
 }

@@ -6,7 +6,7 @@ import {
   useCurrentUser,
   useWidgetSetting,
   useWidgetSharedState,
-  ViewList,
+  ConditionV2
 } from "@mylinkpi/widget-react";
 import dayjs from 'dayjs'
 
@@ -18,8 +18,6 @@ type BasicExampleConfig = {
 };
 
 const config = defineWidget<BasicExampleConfig>()({
-  id: "BasicExample",
-  title: "基本示例",
   icon: () => {
     return <AlertOutlined />;
   },

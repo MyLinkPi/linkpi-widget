@@ -6,7 +6,13 @@ import envCompatible from "vite-plugin-env-compatible";
 
 import "./polyfill.js";
 
-export const createViteBuildConfig = () => {
+export const createViteBuildConfig = ({
+  widgetId,
+  widgetTitle,
+}: {
+  widgetId: string;
+  widgetTitle: string;
+}) => {
   const options: InlineConfig = {
     build: {
       emptyOutDir: true,
@@ -18,7 +24,7 @@ export const createViteBuildConfig = () => {
       rollupOptions: {
         plugins: [
           externalGlobals({
-            echarts: "echarts",
+          echarts: "echarts",
             react: "React",
             "react-dom": "ReactDOM",
           }),
@@ -27,11 +33,10 @@ export const createViteBuildConfig = () => {
     },
     define: {
       "process.env": process.env,
+      __WIDGET_ID__: JSON.stringify(widgetId),
+      __WIDGET_TITLE__: JSON.stringify(widgetTitle),
     },
-    plugins: [
-      envCompatible(),
-      cssInjectedByJsPlugin(),
-    ],
+    plugins: [envCompatible(), cssInjectedByJsPlugin()],
     root: process.cwd(),
   };
 

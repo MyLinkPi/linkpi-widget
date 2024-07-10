@@ -1,7 +1,9 @@
 import { Command, Flags } from "@oclif/core";
+import { consola } from "consola";
 import { build } from "vite";
 
 import { createViteBuildConfig } from "../utils/vite.js";
+import { getWidgetConfig } from "../utils/index.js";
 
 export default class Build extends Command {
   static description = "Build your widget";
@@ -13,19 +15,25 @@ export default class Build extends Command {
     // 可以添加更多的flag，如指定输出目录等
   };
 
-  async buildAndUpload() {
+  async build() {
     try {
+      consola.start("Building the widget...");
+      const widgetConfig = await getWidgetConfig();
       // 使用Vite打包
-      await build(createViteBuildConfig());
+      await build(
+        createViteBuildConfig({
+          widgetId: widgetConfig.id,
+          widgetTitle: widgetConfig.name,
+        }),
+      );
 
-      this.log("Widget build successfully.");
+      consola.success("Widget build successfully.");
     } catch (error) {
-      this.error(`Error building widget: ${error}`);
+      consola.error(`Error building widget: ${error}`);
     }
   }
 
   async run() {
-    this.log("Building the widget...");
-    await this.buildAndUpload();
+    await this.build();
   }
 }

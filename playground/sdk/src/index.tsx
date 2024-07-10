@@ -25,8 +25,6 @@ type BasicSDKExampleConfig = {
 };
 
 const config = defineWidget<BasicSDKExampleConfig>()({
-  id: "BasicSDKExample",
-  title: "SDK示例",
   icon: () => {
     return <AlertOutlined />;
   },
