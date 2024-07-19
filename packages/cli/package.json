@@ -3,6 +3,7 @@
   "version": "1.0.0-beta.37",
   "description": "A new CLI generated with oclif",
   "author": "1-week",
+  "type": "module",
   "bin": {
     "widget-cli": "./bin/run.js"
   },

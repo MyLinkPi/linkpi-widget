@@ -11,11 +11,11 @@ export default defineConfig({
   plugins: [
     react(),
     libInjectCss(),
+    tsconfigPaths(),
     dtsBundleGenerator({
       fileName: "main.d.ts",
       libraries: { inlinedLibraries: ["@linkpi/core", "@linkpi/sdk"] },
     }),
-    tsconfigPaths(),
   ],
   build: {
     lib: {

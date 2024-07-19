@@ -27,6 +27,7 @@
     "access": "public"
   },
   "dependencies": {
+    "type-fest": "^4.22.1",
     "unbuild": "2.0.0"
   },
   "peerDependencies": {

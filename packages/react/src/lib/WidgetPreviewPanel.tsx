@@ -12,6 +12,7 @@ import {
   Updater,
 } from "@/hook";
 
+// @ts-ignore
 import styles from "./WidgetPreviewPanel.module.css";
 
 const { Header, Content, Footer } = Layout;

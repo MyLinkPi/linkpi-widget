@@ -2,8 +2,8 @@ import { fixupPluginRules } from "@eslint/compat";
 import eslint from "@eslint/js";
 import { eslintFlat as linkpiEslintFlat } from "@linkpi/lint";
 import eslintPluginReactHooks from "eslint-plugin-react-hooks";
-import tseslint from "typescript-eslint";
 import reactRefresh from "eslint-plugin-react-refresh";
+import tseslint from "typescript-eslint";
 
 export default tseslint.config(
   eslint.configs.recommended,
@@ -32,6 +32,7 @@ export default tseslint.config(
     rules: {
       "@typescript-eslint/no-unused-vars": "warn",
       "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/ban-ts-comment": "warn",
     },
   },
   {
