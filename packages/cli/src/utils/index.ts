@@ -1,6 +1,7 @@
+import path from "node:path";
+
 import { defineWidgetConfig } from "@mylinkpi/widget-core";
 import { consola } from "consola";
-import path from "node:path";
 import { z, ZodError } from "zod";
 
 type WidgetConfig = ReturnType<typeof defineWidgetConfig>;
@@ -24,8 +25,9 @@ export const getWidgetConfig = async () => {
   } catch (error) {
     if (error instanceof ZodError) {
       consola.error(error.message);
-      throw Error("invalid widget.config.js!");
+      throw new Error("invalid widget.config.js!");
     }
-    throw Error("missing widget.config.js!");
+
+    throw new Error("missing widget.config.js!");
   }
 };

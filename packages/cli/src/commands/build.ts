@@ -2,8 +2,8 @@ import { Command, Flags } from "@oclif/core";
 import { consola } from "consola";
 import { build } from "vite";
 
-import { createViteBuildConfig } from "../utils/vite.js";
 import { getWidgetConfig } from "../utils/index.js";
+import { createViteBuildConfig } from "../utils/vite.js";
 
 export default class Build extends Command {
   static description = "Build your widget";

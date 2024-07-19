@@ -1,4 +1,5 @@
 import path from "node:path";
+
 import { PluginOption } from "vite";
 
 // 插件来生成虚拟入口

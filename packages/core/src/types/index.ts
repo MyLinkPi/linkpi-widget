@@ -1,6 +1,5 @@
 import { FC, ReactNode } from "react";
-
-export type UnknownObject = Record<string, unknown>;
+import { JsonObject } from "type-fest";
 
 export interface IWidgetBasic {
   maxCount?: number;
@@ -46,10 +45,7 @@ export type WidgetRender<T extends unknown = unknown> = FC<
   }
 >;
 
-export interface IWidget<
-  P extends string,
-  T extends UnknownObject = UnknownObject,
-> {
+export interface IWidget<P extends string, T extends JsonObject = JsonObject> {
   render: WidgetRender;
   preview: WidgetPreivew;
   setting: WidgetSetting;

@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-named-as-default
 import externalGlobals from "rollup-plugin-external-globals";
 import { InlineConfig } from "vite";
 import cssInjectedByJsPlugin from "vite-plugin-css-injected-by-js";
@@ -32,9 +31,9 @@ export const createViteBuildConfig = ({
       },
     },
     define: {
-      "process.env": process.env,
       __WIDGET_ID__: JSON.stringify(widgetId),
       __WIDGET_TITLE__: JSON.stringify(widgetTitle),
+      "process.env": process.env,
     },
     plugins: [envCompatible(), cssInjectedByJsPlugin()],
     root: process.cwd(),

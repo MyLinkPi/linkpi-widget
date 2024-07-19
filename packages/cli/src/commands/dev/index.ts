@@ -17,14 +17,14 @@ export default class Dev extends Command {
       const server = await createServer({
         // 传递Vite配置
         configFile: false,
+        define: {
+          __WIDGET_ID__: JSON.stringify(widgetConfig.id),
+          __WIDGET_TITLE__: JSON.stringify(widgetConfig.name),
+        },
         plugins: [virtualEntry(), react(), serveIndexHtml()],
         root: process.cwd(),
         server: {
           port: 9000,
-        },
-        define: {
-          __WIDGET_ID__: JSON.stringify(widgetConfig.id),
-          __WIDGET_TITLE__: JSON.stringify(widgetConfig.name),
         },
       });
 

@@ -1,4 +1,6 @@
-import type { IWidget, UnknownObject } from "./types";
+import { JsonObject } from "type-fest";
+
+import type { IWidget } from "./types";
 
 /**
  * 定义组件，并且做类型检查
@@ -12,7 +14,7 @@ import type { IWidget, UnknownObject } from "./types";
  * - https://github.com/microsoft/TypeScript/pull/26349
  */
 export const defineWidget =
-  <T extends UnknownObject = UnknownObject>() =>
+  <T extends JsonObject = JsonObject>() =>
   <P extends string>(_config: Omit<IWidget<P, T>, "title" | "id">) => {
     const config = {
       id: __WIDGET_ID__,

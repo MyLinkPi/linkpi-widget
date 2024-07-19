@@ -1,5 +1,5 @@
-import { UnknownObject } from "@mylinkpi/widget-core";
 import { useContext } from "react";
+import { JsonObject } from "type-fest";
 
 import { getGlobalContext, Updater } from "@/util";
 
@@ -9,7 +9,7 @@ const hackKey = "widget_setting";
  * 返回单例的 context
  */
 export const getWidgetSettingContext = <
-  T extends UnknownObject = UnknownObject,
+  T extends JsonObject = JsonObject,
 >() =>
   getGlobalContext(hackKey, {
     value: {},
@@ -17,7 +17,7 @@ export const getWidgetSettingContext = <
     setValue: (_newValue: T) => {},
   });
 
-export const useWidgetSetting = <T extends UnknownObject = UnknownObject>() => {
+export const useWidgetSetting = <T extends JsonObject = JsonObject>() => {
   const WidgetSettingContext = getWidgetSettingContext();
   const { value, setValue } = useContext(WidgetSettingContext);
 

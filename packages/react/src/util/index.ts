@@ -1,10 +1,8 @@
-// import { UnknownObject } from "@mylinkpi/widget-core";
 import { Draft } from "immer";
 import { type Context, createContext } from "react";
+import { JsonObject } from "type-fest";
 
-type UnknownObject = Record<string, unknown>;
-
-export type Updater<T extends UnknownObject> = (draft: Draft<T>) => void;
+export type Updater<T extends JsonObject> = (draft: Draft<T>) => void;
 
 /**
  * 获取宿主环境提供的 context
@@ -17,7 +15,7 @@ export const getGlobalContext = <T>(hackKey: string, defaultValue: T) => {
   const key = `__mylinkpi__fixme__${hackKey}__context__`;
 
   if (!window[key as any]) {
-    // @ts-ignore
+    // @ts-expect-error patch window
     window[key as any] = createContext(defaultValue);
   }
 

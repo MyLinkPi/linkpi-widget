@@ -1,16 +1,15 @@
-import { defineWidget } from "@mylinkpi/widget-core";
-import React from "react";
-import { Form, Input, TimePicker } from "antd";
 import { AlertOutlined } from "@ant-design/icons";
+import { defineWidget } from "@mylinkpi/widget-core";
 import {
+  ConditionV2,
   useCurrentUser,
   useWidgetSetting,
-  useWidgetSharedState,
-  ConditionV2
-} from "@mylinkpi/widget-react";
+  useWidgetSharedState} from "@mylinkpi/widget-react";
+import { Form, Input, TimePicker } from "antd";
 import dayjs from 'dayjs'
+import React from "react";
 
-// @ts-ignore
+// @ts-expect-error type error
 import styles from "./index.module.scss";
 
 type BasicExampleConfig = {

@@ -1,10 +1,8 @@
 import react from "@vitejs/plugin-react-swc";
 import { resolve } from "path";
 import { defineConfig } from "vite";
-// import dts from "vite-plugin-dts";
-// import { dts } from "rollup-plugin-dts";
-import tsconfigPaths from "vite-tsconfig-paths";
 import dtsBundleGenerator from "vite-plugin-dts-bundle-generator";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 import { libInjectCss } from "vite-plugin-lib-inject-css";
 
@@ -17,18 +15,6 @@ export default defineConfig({
       fileName: "main.d.ts",
       libraries: { inlinedLibraries: ["@linkpi/core", "@linkpi/sdk"] },
     }),
-    // dts({
-    //   rollupTypes: true,
-    //   bundledPackages: ["@linkpi/*", "immer"],
-    //   logLevel: "info",
-    //   staticImport: true,
-    //   root: process.cwd(),
-    //   insertTypesEntry: true,
-    //   beforeWriteFile: (filePath, content) => {
-    //     console.log(filePath);
-    //     return { filePath, content };
-    //   },
-    // }),
     tsconfigPaths(),
   ],
   build: {

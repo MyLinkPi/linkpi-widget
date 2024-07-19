@@ -1,17 +1,17 @@
-import { IWidget, UnknownObject } from "@mylinkpi/widget-core";
+import { IWidget } from "@mylinkpi/widget-core";
 import { Card, Col, Layout, Row, Typography } from "antd";
 import { produce } from "immer";
 import qs from "query-string";
 import { type FC, useCallback, useMemo, useState } from "react";
+import { JsonObject } from "type-fest";
 
 import {
   getWidgetSettingContext,
   getWidgetSharedStateContext,
   getWidgetUtilsContext,
   Updater,
-} from "../hook";
+} from "@/hook";
 
-// @ts-ignore
 import styles from "./WidgetPreviewPanel.module.css";
 
 const { Header, Content, Footer } = Layout;
@@ -42,14 +42,14 @@ export const WidgetPreviewPanel: FC<{
     ...config.metadata,
   });
   const setWidgetSettingContextValue = useCallback(
-    (config: UnknownObject | Updater<UnknownObject>) => {
+    (config: JsonObject | Updater<JsonObject>) => {
       if (typeof config === "object") {
         setWidgetInstanceConfig(config);
         return;
       }
 
       if (typeof config === "function") {
-        setWidgetInstanceConfig(produce(config));
+        setWidgetInstanceConfig(produce(config as any));
         return;
       }
 
@@ -68,14 +68,14 @@ export const WidgetPreviewPanel: FC<{
   const WidgetSharedStateContext = getWidgetSharedStateContext();
   const [widgetSharedState, setwidgetSharedState] = useState({});
   const setWidgetSharedStateContextValue = useCallback(
-    (config: UnknownObject | Updater<UnknownObject>) => {
+    (config: JsonObject | Updater<JsonObject>) => {
       if (typeof config === "object") {
         setwidgetSharedState(config);
         return;
       }
 
       if (typeof config === "function") {
-        setwidgetSharedState(produce(config));
+        setwidgetSharedState(produce(config as any));
         return;
       }
 

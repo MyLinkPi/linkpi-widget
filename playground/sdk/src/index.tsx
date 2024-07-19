@@ -1,21 +1,21 @@
-import { defineWidget } from "@mylinkpi/widget-core";
-import React, { useEffect, useMemo, useState } from "react";
-import { Form, Input, Select } from "antd";
 import { AlertOutlined } from "@ant-design/icons";
+import { defineWidget } from "@mylinkpi/widget-core";
 import {
-  useCurrentUser,
   useCurrentNode,
-  useWidgetSetting,
-  useTemplateList,
-  useTempatePropList,
-  usePiSDK,
   useCurrentOrgId,
+  useCurrentUser,
+  usePiSDK,
   useTempateProp,
+  useTempatePropList,
+  useTemplateList,
+  useWidgetSetting,
 } from "@mylinkpi/widget-react";
-import { JsonView, allExpanded, defaultStyles } from "react-json-view-lite";
+import { Form, Input, Select } from "antd";
+import React, { useEffect, useMemo, useState } from "react";
+import { allExpanded, defaultStyles, JsonView } from "react-json-view-lite";
 
 import "react-json-view-lite/dist/index.css";
-// @ts-ignore
+// @ts-expect-error type error
 import styles from "./index.module.scss";
 
 type BasicSDKExampleConfig = {

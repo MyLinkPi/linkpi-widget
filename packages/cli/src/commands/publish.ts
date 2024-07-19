@@ -1,7 +1,8 @@
-import { Command, Flags } from "@oclif/core";
-import { consola } from "consola";
 import { readFileSync } from "node:fs";
 import path from "node:path";
+
+import { Command, Flags } from "@oclif/core";
+import { consola } from "consola";
 import { build } from "vite";
 
 import {
@@ -10,8 +11,8 @@ import {
   updateWidget,
   uploadScript,
 } from "../services/index.js";
-import { createViteBuildConfig } from "../utils/vite.js";
 import { getWidgetConfig } from "../utils/index.js";
+import { createViteBuildConfig } from "../utils/vite.js";
 
 export default class Publish extends Command {
   static description = "Build and publish your widget";

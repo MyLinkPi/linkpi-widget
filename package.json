@@ -3,6 +3,7 @@
   "version": "1.0.0-beta.37",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "pnpm -r --sort --filter=./packages/** run build",
     "stub": "pnpm -r --filter=./packages/** run stub",
@@ -13,11 +14,15 @@
   "author": "bayes zou",
   "license": "MIT",
   "devDependencies": {
+    "@eslint/js": "^9.7.0",
     "@linkpi/lint": "^1.0.9",
+    "@types/eslint__js": "^8.42.3",
     "bumpp": "^9.4.1",
     "eslint": "^9.7.0",
     "prettier": "^3.3.3",
     "ts-node": "^10.9.2",
-    "type-fest": "^4.22.0"
+    "type-fest": "^4.22.1",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^7.16.1"
   }
 }
