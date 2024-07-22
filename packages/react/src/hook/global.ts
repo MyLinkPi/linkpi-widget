@@ -38,7 +38,7 @@ export const getWidgetUtilsContext = () =>
     useJumpNode: () => ({
       jump: (_nodeId: string, _viewId: string) => {},
     }),
-    NodeViewComponent: ((props) => null) as FC<{
+    NodeViewComponent: ((_props) => null) as FC<{
       nodeId: string;
       viewId: string;
     }>,
