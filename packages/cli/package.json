@@ -1,6 +1,6 @@
 {
   "name": "@mylinkpi/widget-cli",
-  "version": "1.0.0-beta.41",
+  "version": "1.0.0-beta.42",
   "description": "A new CLI generated with oclif",
   "author": "1-week",
   "type": "module",
