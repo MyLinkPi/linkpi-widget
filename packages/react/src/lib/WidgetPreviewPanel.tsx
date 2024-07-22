@@ -32,6 +32,7 @@ const widgetUtilsContextValue = {
   useCurrentNode: () => ({}) as any,
   useNodeTreeData: () => [],
   useJumpNode: () => ({ jump: () => {} }),
+  NodeViewComponent: () => <div>指定视图</div>,
 };
 
 export const WidgetPreviewPanel: FC<{

@@ -1,7 +1,7 @@
 import { CurrentUser } from "@linkpi/core";
 import { NodeData, PiSDK } from "@linkpi/sdk";
 import { pick } from "ramda";
-import { useContext, useMemo } from "react";
+import { FC, useContext, useMemo } from "react";
 
 import { getGlobalContext } from "@/util";
 
@@ -38,6 +38,10 @@ export const getWidgetUtilsContext = () =>
     useJumpNode: () => ({
       jump: (_nodeId: string, _viewId: string) => {},
     }),
+    NodeViewComponent: ((props) => null) as FC<{
+      nodeId: string;
+      viewId: string;
+    }>,
   });
 
 export const useUrlQuerys = <
