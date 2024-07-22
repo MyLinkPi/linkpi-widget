@@ -10,6 +10,7 @@ import {
   getWidgetSharedStateContext,
   getWidgetUtilsContext,
   Updater,
+  useJumpNode,
 } from "@/hook";
 
 // @ts-ignore
@@ -31,6 +32,7 @@ const widgetUtilsContextValue = {
   piSDK: {} as any,
   useCurrentNode: () => ({}) as any,
   useNodeTreeData: () => [],
+  useJumpNode: () => ({ jump: () => {} }),
 };
 
 export const WidgetPreviewPanel: FC<{
@@ -56,14 +58,14 @@ export const WidgetPreviewPanel: FC<{
 
       throw Error("setValue 参数类型不对");
     },
-    [],
+    []
   );
   const widgetSettingContextValue = useMemo(
     () => ({
       value: widgetInstanceConfig,
       setValue: setWidgetSettingContextValue,
     }),
-    [setWidgetSettingContextValue, widgetInstanceConfig],
+    [setWidgetSettingContextValue, widgetInstanceConfig]
   );
 
   const WidgetSharedStateContext = getWidgetSharedStateContext();
@@ -82,14 +84,14 @@ export const WidgetPreviewPanel: FC<{
 
       throw Error("setValue 参数类型不对");
     },
-    [],
+    []
   );
   const widgetSharedStateContextValue = useMemo(
     () => ({
       value: widgetSharedState,
       setValue: setWidgetSharedStateContextValue,
     }),
-    [setWidgetSettingContextValue, widgetInstanceConfig],
+    [setWidgetSettingContextValue, widgetInstanceConfig]
   );
 
   const [tab, setTab] = useState<string>("setting");

@@ -1,5 +1,5 @@
 import { CurrentUser } from "@linkpi/core";
-import { NodeData,PiSDK } from "@linkpi/sdk";
+import { NodeData, PiSDK } from "@linkpi/sdk";
 import { pick } from "ramda";
 import { useContext, useMemo } from "react";
 
@@ -35,6 +35,9 @@ export const getWidgetUtilsContext = () =>
     piSDK: {} as PiSDK,
     useCurrentNode: () => ({}) as NodeData,
     useNodeTreeData: () => [] as NodeTreeData[],
+    useJumpNode: () => ({
+      jump: (_nodeId: string, _viewId: string) => {},
+    }),
   });
 
 export const useUrlQuerys = <
@@ -108,7 +111,7 @@ export const useTempatePropList = (templateId: string) => {
         .filter((p) => p.name && p.type)
         .map((p) => pick(["name", "type", "propIndex"], p)) ||
         []) as unknown as TemplatePropList,
-    [tempInfo?.prop],
+    [tempInfo?.prop]
   );
 
   return propList;
@@ -149,4 +152,11 @@ export const useNodeTreeData = () => {
   const { useNodeTreeData: _useNodeTreeData } = useContext(context);
 
   return _useNodeTreeData();
+};
+
+export const useJumpNode = () => {
+  const context = getWidgetUtilsContext();
+  const { useJumpNode: _useJumpNode } = useContext(context);
+
+  return _useJumpNode();
 };
