@@ -10,7 +10,6 @@ import {
   getWidgetSharedStateContext,
   getWidgetUtilsContext,
   Updater,
-  useJumpNode,
 } from "@/hook";
 
 // @ts-ignore
