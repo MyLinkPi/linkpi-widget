@@ -1,12 +1,13 @@
 import { AlertOutlined } from "@ant-design/icons";
 import { defineWidget } from "@mylinkpi/widget-core";
 import {
-  ConditionV2,
   useCurrentUser,
+  useNodeContentModalClose,
   useWidgetSetting,
-  useWidgetSharedState} from "@mylinkpi/widget-react";
-import { Form, Input, TimePicker } from "antd";
-import dayjs from 'dayjs'
+  useWidgetSharedState,
+} from "@mylinkpi/widget-react";
+import { Button, Form, Input, TimePicker } from "antd";
+import dayjs from "dayjs";
 import React from "react";
 
 // @ts-expect-error type error
@@ -27,6 +28,7 @@ const config = defineWidget<BasicExampleConfig>()({
       globalText: string;
     }>();
     const currentUser = useCurrentUser();
+    const { close } = useNodeContentModalClose();
 
     const [setting] = useWidgetSetting<BasicExampleConfig>();
     return (
@@ -45,6 +47,7 @@ const config = defineWidget<BasicExampleConfig>()({
             />
           </Form.Item>
         </Form>
+        <Button onClick={close}>关闭</Button>
       </div>
     );
   },
@@ -68,7 +71,7 @@ const config = defineWidget<BasicExampleConfig>()({
           />
         </Form.Item>
         <Form.Item label="时间">
-          <TimePicker value={dayjs() as any}/>
+          <TimePicker value={dayjs() as any} />
         </Form.Item>
       </Form>
     );

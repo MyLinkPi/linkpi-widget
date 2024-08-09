@@ -41,6 +41,13 @@ const config = defineWidget<BasicSDKExampleConfig>()({
 
     const nodeData = useCurrentNode();
 
+    piSDK.updateNodeProp({
+      index: [1],
+      value: ["测试"],
+      nodeId: "xxx",
+      orgId: "xxxx",
+    });
+
     useEffect(() => {
       (async () => {
         const res = await piSDK.getNodeList({
@@ -102,13 +109,13 @@ const config = defineWidget<BasicSDKExampleConfig>()({
             label: i.name,
             value: i.template_id,
           })),
-      [tempList],
+      [tempList]
     );
     const templateId = Form.useWatch(["templateId"], form);
     const propList = useTempatePropList(templateId || "");
     const propSelectOptions = useMemo(
       () => propList.map((p) => ({ value: p.propIndex, label: p.name })),
-      [propList],
+      [propList]
     );
     const propIndex = Form.useWatch(["propIndex"], form);
     const propInfo = useTempateProp(templateId, propIndex);

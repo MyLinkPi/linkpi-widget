@@ -38,6 +38,9 @@ export const getWidgetUtilsContext = () =>
     useJumpNode: () => ({
       jump: (_nodeId: string, _viewId: string) => {},
     }),
+    useNodeContentModalClose: () => ({
+      close: () => {},
+    }),
     NodeViewComponent: ((_props) => null) as FC<{
       nodeId: string;
       viewId: string;
@@ -165,3 +168,9 @@ export const useJumpNode = () => {
   return _useJumpNode();
 };
 
+export const useNodeContentModalClose = () => {
+  const context = getWidgetUtilsContext();
+  const { useNodeContentModalClose: _useNodeContentModalClose } = useContext(context);
+
+  return _useNodeContentModalClose();
+};
