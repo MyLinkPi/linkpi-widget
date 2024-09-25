@@ -26,6 +26,7 @@
     "@oclif/plugin-plugins": "^5.4.2",
     "@vitejs/plugin-react": "^4.3.1",
     "axios": "^1.7.3",
+    "c12": "^1.11.2",
     "consola": "^3.2.3",
     "echarts": "^5.5.1",
     "react": "^18.3.1",

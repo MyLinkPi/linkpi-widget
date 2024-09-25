@@ -1,6 +1,5 @@
-import path from "node:path";
-
 import { defineWidgetConfig } from "@mylinkpi/widget-core";
+import { loadConfig } from "c12";
 import { consola } from "consola";
 import { z, ZodError } from "zod";
 
@@ -10,14 +9,14 @@ const WidgetConfigSchema = z.object({
   id: z.string(),
   name: z.string(),
 });
+
 export const getWidgetConfig = async () => {
   try {
     consola.info("reading widget.config.js...");
 
-    const configPath =
-      "file://" + path.resolve(process.cwd(), "widget.config.js");
-    const config: any = await import(configPath);
-    const widgetConfig = config.default;
+    const { config: widgetConfig } = await loadConfig<WidgetConfig>({
+      name: "widget",
+    });
 
     WidgetConfigSchema.parse(widgetConfig);
 
