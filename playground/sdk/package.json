@@ -18,12 +18,12 @@
     "@mylinkpi/widget-core": "workspace:*",
     "@mylinkpi/widget-react": "workspace:*",
     "antd": "^4.24.16",
-    "react-json-view-lite": "^1.4.0"
+    "react-json-view-lite": "^1.5.0"
   },
   "devDependencies": {
-    "@types/react": "^18.3.3",
+    "@types/react": "^18.3.9",
     "@types/react-dom": "^18.3.0",
-    "sass": "^1.77.8"
+    "sass": "^1.79.3"
   },
   "peerDependencies": {
     "react": "^18.3.0",
