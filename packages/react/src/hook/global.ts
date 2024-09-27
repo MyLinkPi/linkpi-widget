@@ -1,4 +1,4 @@
-import { CurrentUser } from "@linkpi/core";
+import { CurrentUser, WidgetInstanceData } from "@linkpi/core";
 import { NodeData, PiSDK } from "@linkpi/sdk";
 import { pick } from "ramda";
 import { FC, useContext, useMemo } from "react";
@@ -45,6 +45,7 @@ export const getWidgetUtilsContext = () =>
       nodeId: string;
       viewId: string;
     }>,
+    useWidgetInstancesByWidgetId: (_widgetId: string) => [] as WidgetInstanceData[],
   });
 
 export const useUrlQuerys = <
@@ -173,4 +174,11 @@ export const useNodeContentModalClose = () => {
   const { useNodeContentModalClose: _useNodeContentModalClose } = useContext(context);
 
   return _useNodeContentModalClose();
+};
+
+export const useWidgetInstanceByWidgetId = (widgetId: string) => {
+  const context = getWidgetUtilsContext();
+  const { useWidgetInstancesByWidgetId: _useWidgetInstancesByWidgetId } = useContext(context);
+
+  return _useWidgetInstancesByWidgetId(widgetId);
 };

@@ -1,5 +1,5 @@
-import { JsonObject } from "type-fest";
 import { useContext } from "react";
+import { JsonObject } from "type-fest";
 
 import { getGlobalContext, Updater } from "@/util";
 
@@ -13,7 +13,7 @@ export const getWidgetSharedStateContext = <
 >() =>
   getGlobalContext(hackKey, {
     value: {} as T,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+     
     setValue: (_newValue: T) => {},
   });
 

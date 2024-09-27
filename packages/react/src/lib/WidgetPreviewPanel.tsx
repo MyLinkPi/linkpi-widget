@@ -34,6 +34,7 @@ const widgetUtilsContextValue = {
   useJumpNode: () => ({ jump: () => {} }),
   useNodeContentModalClose: () => ({ close: () => {} }),
   NodeViewComponent: () => <div>指定视图</div>,
+  useWidgetInstancesByWidgetId: () => [],
 };
 
 export const WidgetPreviewPanel: FC<{
