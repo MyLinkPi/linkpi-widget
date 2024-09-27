@@ -3,6 +3,7 @@ import { defineWidget } from "@mylinkpi/widget-core";
 import {
   useCurrentUser,
   useNodeContentModalClose,
+  useWidgetInstanceByWidgetId,
   useWidgetSetting,
   useWidgetSharedState,
 } from "@mylinkpi/widget-react";

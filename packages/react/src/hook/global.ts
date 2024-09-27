@@ -176,7 +176,7 @@ export const useNodeContentModalClose = () => {
   return _useNodeContentModalClose();
 };
 
-export const useWidgetInstanceByWidgetId = (widgetId: string) => {
+export const useWidgetInstancesByWidgetId = (widgetId: string) => {
   const context = getWidgetUtilsContext();
   const { useWidgetInstancesByWidgetId: _useWidgetInstancesByWidgetId } = useContext(context);
 
