@@ -24,15 +24,15 @@
   "dependencies": {
     "@mylinkpi/widget-core": "workspace:*",
     "immer": "^10.1.1",
-    "query-string": "^9.1.0",
+    "query-string": "^9.1.1",
     "ramda": "^0.30.1",
     "type-fest": "^4.26.1"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.0",
-    "@linkpi/core": "^1.0.0-rc.2",
-    "@linkpi/request": "^1.0.0-rc.2",
-    "@linkpi/sdk": "^1.0.0-rc.2",
+    "@linkpi/core": "^1.0.0-rc.3",
+    "@linkpi/request": "^1.0.0-rc.3",
+    "@linkpi/sdk": "^1.0.0-rc.3",
     "@types/ramda": "^0.30.2",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",

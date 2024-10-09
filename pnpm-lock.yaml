@@ -18,8 +18,8 @@ importers:
         specifier: ^8.42.3
         version: 8.42.3
       bumpp:
-        specifier: ^9.6.1
-        version: 9.6.1
+        specifier: ^9.7.1
+        version: 9.7.1
       eslint:
         specifier: ^9.12.0
         version: 9.12.0(jiti@1.21.6)
@@ -157,8 +157,8 @@ importers:
         specifier: ^10.1.1
         version: 10.1.1
       query-string:
-        specifier: ^9.1.0
-        version: 9.1.0
+        specifier: ^9.1.1
+        version: 9.1.1
       ramda:
         specifier: ^0.30.1
         version: 0.30.1
@@ -176,14 +176,14 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0(eslint@9.12.0(jiti@1.21.6))
       '@linkpi/core':
-        specifier: ^1.0.0-rc.2
-        version: 1.0.0-rc.2(antd@4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(sass@1.79.4)(typescript@5.6.3)
+        specifier: ^1.0.0-rc.3
+        version: 1.0.0-rc.3(antd@4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(sass@1.79.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
       '@linkpi/request':
-        specifier: ^1.0.0-rc.2
-        version: 1.0.0-rc.2(sass@1.79.4)(typescript@5.6.3)
+        specifier: ^1.0.0-rc.3
+        version: 1.0.0-rc.3(sass@1.79.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
       '@linkpi/sdk':
-        specifier: ^1.0.0-rc.2
-        version: 1.0.0-rc.2(@linkpi/core@1.0.0-rc.2(antd@4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(sass@1.79.4)(typescript@5.6.3))(@linkpi/request@1.0.0-rc.2(sass@1.79.4)(typescript@5.6.3))(@linkpi/utils@1.0.0-rc.2(sass@1.79.4)(typescript@5.6.3))(sass@1.79.4)(typescript@5.6.3)(uuid@9.0.1)
+        specifier: ^1.0.0-rc.3
+        version: 1.0.0-rc.3(@linkpi/core@1.0.0-rc.3(antd@4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(sass@1.79.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3)))(@linkpi/request@1.0.0-rc.3(sass@1.79.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3)))(@linkpi/utils@1.0.0-rc.3(sass@1.79.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3)))(sass@1.79.4)(typescript@5.6.3)(uuid@9.0.1)(vue-tsc@1.8.27(typescript@5.6.3))
       '@types/ramda':
         specifier: ^0.30.2
         version: 0.30.2
@@ -1299,31 +1299,31 @@ packages:
     resolution: {integrity: sha512-f5DRIOZf7wxogefH03RjMPMdBF7ADTWUMoOs9kaJo06EfwF+aFhMZMDZxHg/Xe12hptN9xoZjGso2fdjapBRIA==}
     engines: {node: '>=10'}
 
-  '@linkpi/core@1.0.0-rc.2':
-    resolution: {integrity: sha512-Sf52aJ0X+KjwSQsIWbaBJUHF25hAwMv2SFLA+0zfpRCYsPTgeaUklLs/2kjSff4MrOxtKd4M9o/yVRiGGTq1Rg==}
+  '@linkpi/core@1.0.0-rc.3':
+    resolution: {integrity: sha512-LHEgjdN/YZrULxekIUkvAinFuR3eas9HoEVgFtC/t98Wd2G56/EeVzDsFCSk7G/MAY4n55Yo3CScqAfr88jSwQ==}
     peerDependencies:
       antd: '4'
       react: ^18.2.0
 
-  '@linkpi/elecwatt@1.0.0-rc.2':
-    resolution: {integrity: sha512-cDfprFtYhUQfwoMsk/6fL9Byk5QS+xaRPtIPTuICDeH8W4Ty6DeTndJ2KSA09HIhAZXlp90xZcUZ/GiK0ZADZQ==}
+  '@linkpi/elecwatt@1.0.0-rc.3':
+    resolution: {integrity: sha512-5V5XdyCLLnRBZ4cOatRnmX2QBPIO+jTIifR9Rx489JOpPi2Y1AbrV+evbkfr7pZtZ93MieGoEq8nOnfe6QjgTw==}
 
   '@linkpi/lint@1.0.9':
     resolution: {integrity: sha512-QeHkfta3J/KmyzkWaBEUakD6yXdfORhnABlDTBcCRPIWZY3eocWAEczsOyEzHdZAZYpHe8NeP17bLlvvVAOv8w==}
 
-  '@linkpi/request@1.0.0-rc.2':
-    resolution: {integrity: sha512-HzVvHPLFdRZb7dxvrGXMeHNphzAFf/Ok1ST0FqC+V+1lYy7oC3Ty2UDVevJ11j5e4gIVGWeMaDOrlnaxFdNV2A==}
+  '@linkpi/request@1.0.0-rc.3':
+    resolution: {integrity: sha512-jILeB074fLKgRiFbcZ+8Fk0wX0UpgqmDBztpR1Njn+SB4H6/JxMN3A64yj7PXKl7YFeMbi73hZ8jodckpguW3w==}
 
-  '@linkpi/sdk@1.0.0-rc.2':
-    resolution: {integrity: sha512-tUk0EUDyhzrr3IwXJCvZte1RosBHfFwbWhbiMgw+5Fhvwnq4CP1hvYSsQNPeK5HyxFv5AlSrFIZi8VJuyP5CVQ==}
+  '@linkpi/sdk@1.0.0-rc.3':
+    resolution: {integrity: sha512-mtXxN1X/O+VpOrhPgRmtk6EYRSBxAqlQp6RN3s/EMKvYFEJSX+8zVw0QRJy/6ttxrfTIg2Z91mUHL9ctZRqZ1Q==}
     peerDependencies:
-      '@linkpi/core': 1.0.0-rc.2
-      '@linkpi/request': 1.0.0-rc.2
-      '@linkpi/utils': 1.0.0-rc.2
+      '@linkpi/core': 1.0.0-rc.3
+      '@linkpi/request': 1.0.0-rc.3
+      '@linkpi/utils': 1.0.0-rc.3
       uuid: ^9
 
-  '@linkpi/utils@1.0.0-rc.2':
-    resolution: {integrity: sha512-pCFoCAbmXMFsx7ON8FkftDBhG3lNn1rZbOcKDpcWqWB7xkAMAZx3pa1HT39ntnESC7I2z0PfbrzD+A8e3CYTqw==}
+  '@linkpi/utils@1.0.0-rc.3':
+    resolution: {integrity: sha512-+y82RDh5d1arzRR6zNoLczPLgNiuexwAIPOui8bIxUCddb6P34Cu/01eqkHzgUTokINMS1h4TZgHx/GLlbzG9w==}
 
   '@mylinkpi/ot-json1@2.0.3':
     resolution: {integrity: sha512-wAErFbSG6ttlgFqoyOY4KKn0abheXzvPjmUd2Z8uoDbsgCHIpMLijJZNR+xEuzQrLD/QMbXldYajZEqQtJarjQ==}
@@ -2166,8 +2166,8 @@ packages:
   builtin-status-codes@3.0.0:
     resolution: {integrity: sha512-HpGFw18DgFWlncDfjTa2rcQ4W88O1mC8e8yZ2AvQY5KDaktSTwo+KRf6nHK6FRI5FyRyb/5T6+TSxfP7QyGsmQ==}
 
-  bumpp@9.6.1:
-    resolution: {integrity: sha512-lQlPfyS0GrO5FaOODK+OHQxfCT+6/xWfd3Zt8dzsmzm69RWQfh5fAU9igmeZWOzK/s+4vL+gQLo3yw474ntBZw==}
+  bumpp@9.7.1:
+    resolution: {integrity: sha512-Z6fhD5B8POcSkP+LIHeFQ0+vF0p/C3U+aYp3Yui748VCmsHrhJ/ZshP2970FqE93ymHrJVXTTF8/HDKrRNEYvw==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -3893,8 +3893,8 @@ packages:
     resolution: {integrity: sha512-zWmv4RSuB9r2mYQw3zxQuHWeU+42aKi1wWig/j4ele4ygELZ7PEO6MM7rim9oAQH2A5MWfsAVf/jPvTPgCbvUQ==}
     engines: {node: '>=0.6'}
 
-  query-string@9.1.0:
-    resolution: {integrity: sha512-t6dqMECpCkqfyv2FfwVS1xcB6lgXW/0XZSaKdsCNGYkqMO76AFiJEg4vINzoDKcZa6MS7JX+OHIjwh06K5vczw==}
+  query-string@9.1.1:
+    resolution: {integrity: sha512-MWkCOVIcJP9QSKU52Ngow6bsAWAPlPK2MludXvcrS2bGZSl+T1qX9MZvRIkqUIkGLJquMJHWfsT6eRqUpp4aWg==}
     engines: {node: '>=18'}
 
   queue-microtask@1.2.3:
@@ -6113,13 +6113,13 @@ snapshots:
       string-argv: 0.3.2
       type-detect: 4.1.0
 
-  '@linkpi/core@1.0.0-rc.2(antd@4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(sass@1.79.4)(typescript@5.6.3)':
+  '@linkpi/core@1.0.0-rc.3(antd@4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(sass@1.79.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))':
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
-      '@babel/parser': 7.25.6
+      '@babel/parser': 7.25.7
       '@babel/runtime': 7.25.6
-      '@linkpi/elecwatt': 1.0.0-rc.2(sass@1.79.4)(typescript@5.6.3)
-      '@linkpi/utils': 1.0.0-rc.2(sass@1.79.4)(typescript@5.6.3)
+      '@linkpi/elecwatt': 1.0.0-rc.3(sass@1.79.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
+      '@linkpi/utils': 1.0.0-rc.3(sass@1.79.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
       '@uni/env': 1.1.1
       ahooks: 3.8.1(react@18.3.1)
       ali-oss: 6.21.0
@@ -6145,7 +6145,7 @@ snapshots:
       - typescript
       - vue-tsc
 
-  '@linkpi/elecwatt@1.0.0-rc.2(sass@1.79.4)(typescript@5.6.3)':
+  '@linkpi/elecwatt@1.0.0-rc.3(sass@1.79.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))':
     dependencies:
       unbuild: 2.0.0(sass@1.79.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
     transitivePeerDependencies:
@@ -6161,7 +6161,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@linkpi/request@1.0.0-rc.2(sass@1.79.4)(typescript@5.6.3)':
+  '@linkpi/request@1.0.0-rc.3(sass@1.79.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))':
     dependencies:
       axios: 1.7.7
       unbuild: 2.0.0(sass@1.79.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
@@ -6172,12 +6172,12 @@ snapshots:
       - typescript
       - vue-tsc
 
-  '@linkpi/sdk@1.0.0-rc.2(@linkpi/core@1.0.0-rc.2(antd@4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(sass@1.79.4)(typescript@5.6.3))(@linkpi/request@1.0.0-rc.2(sass@1.79.4)(typescript@5.6.3))(@linkpi/utils@1.0.0-rc.2(sass@1.79.4)(typescript@5.6.3))(sass@1.79.4)(typescript@5.6.3)(uuid@9.0.1)':
+  '@linkpi/sdk@1.0.0-rc.3(@linkpi/core@1.0.0-rc.3(antd@4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(sass@1.79.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3)))(@linkpi/request@1.0.0-rc.3(sass@1.79.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3)))(@linkpi/utils@1.0.0-rc.3(sass@1.79.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3)))(sass@1.79.4)(typescript@5.6.3)(uuid@9.0.1)(vue-tsc@1.8.27(typescript@5.6.3))':
     dependencies:
       '@abraham/reflection': 0.12.0
-      '@linkpi/core': 1.0.0-rc.2(antd@4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(sass@1.79.4)(typescript@5.6.3)
-      '@linkpi/request': 1.0.0-rc.2(sass@1.79.4)(typescript@5.6.3)
-      '@linkpi/utils': 1.0.0-rc.2(sass@1.79.4)(typescript@5.6.3)
+      '@linkpi/core': 1.0.0-rc.3(antd@4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(sass@1.79.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
+      '@linkpi/request': 1.0.0-rc.3(sass@1.79.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
+      '@linkpi/utils': 1.0.0-rc.3(sass@1.79.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
       emittery: 1.0.3
       ramda: 0.29.1
       ts-pattern: 5.3.1
@@ -6190,7 +6190,7 @@ snapshots:
       - typescript
       - vue-tsc
 
-  '@linkpi/utils@1.0.0-rc.2(sass@1.79.4)(typescript@5.6.3)':
+  '@linkpi/utils@1.0.0-rc.3(sass@1.79.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))':
     dependencies:
       ramda: 0.30.1
       unbuild: 2.0.0(sass@1.79.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
@@ -7025,7 +7025,7 @@ snapshots:
 
   '@vue/compiler-core@3.4.27':
     dependencies:
-      '@babel/parser': 7.25.6
+      '@babel/parser': 7.25.7
       '@vue/shared': 3.4.27
       entities: 4.5.0
       estree-walker: 2.0.2
@@ -7279,7 +7279,7 @@ snapshots:
 
   builtin-status-codes@3.0.0: {}
 
-  bumpp@9.6.1:
+  bumpp@9.7.1:
     dependencies:
       '@jsdevtools/ez-spawn': 3.0.4
       c12: 1.11.2
@@ -9015,7 +9015,7 @@ snapshots:
     dependencies:
       side-channel: 1.0.6
 
-  query-string@9.1.0:
+  query-string@9.1.1:
     dependencies:
       decode-uri-component: 0.4.1
       filter-obj: 5.1.0
