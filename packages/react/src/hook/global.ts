@@ -1,5 +1,9 @@
-import { CurrentUser, WidgetInstanceData } from "@linkpi/core";
-import { NodeData, PiSDK } from "@linkpi/sdk";
+import {
+  CurrentUser,
+  TemplateNodeData,
+  WidgetInstanceData,
+} from "@linkpi/core";
+import { PiSDK } from "@linkpi/sdk";
 import { pick } from "ramda";
 import { FC, useContext, useMemo } from "react";
 
@@ -33,7 +37,7 @@ export const getWidgetUtilsContext = () =>
     useTemplateInfo: (_orgId: string, _templateId: string) =>
       ({}) as TemplateInfo | undefined,
     piSDK: {} as PiSDK,
-    useCurrentNode: () => ({}) as NodeData,
+    useCurrentNode: () => ({}) as TemplateNodeData,
     useNodeTreeData: () => [] as NodeTreeData[],
     useJumpNode: () => ({
       jump: (_nodeId: string, _viewId: string) => {},
@@ -45,7 +49,8 @@ export const getWidgetUtilsContext = () =>
       nodeId: string;
       viewId: string;
     }>,
-    useWidgetInstancesByWidgetId: (_widgetId: string) => [] as WidgetInstanceData[],
+    useWidgetInstancesByWidgetId: (_widgetId: string) =>
+      [] as WidgetInstanceData[],
   });
 
 export const useUrlQuerys = <
@@ -171,14 +176,16 @@ export const useJumpNode = () => {
 
 export const useNodeContentModalClose = () => {
   const context = getWidgetUtilsContext();
-  const { useNodeContentModalClose: _useNodeContentModalClose } = useContext(context);
+  const { useNodeContentModalClose: _useNodeContentModalClose } =
+    useContext(context);
 
   return _useNodeContentModalClose();
 };
 
 export const useWidgetInstancesByWidgetId = (widgetId: string) => {
   const context = getWidgetUtilsContext();
-  const { useWidgetInstancesByWidgetId: _useWidgetInstancesByWidgetId } = useContext(context);
+  const { useWidgetInstancesByWidgetId: _useWidgetInstancesByWidgetId } =
+    useContext(context);
 
   return _useWidgetInstancesByWidgetId(widgetId);
 };
