@@ -30,9 +30,9 @@
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.0",
-    "@linkpi/core": "^1.0.0-rc.4",
-    "@linkpi/request": "^1.0.0-rc.4",
-    "@linkpi/sdk": "^1.0.0-rc.4",
+    "@linkpi/core": "^1.0.0-rc.13",
+    "@linkpi/request": "^1.0.0-rc.13",
+    "@linkpi/sdk": "^1.0.0-rc.13",
     "@types/ramda": "^0.30.2",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.0",
