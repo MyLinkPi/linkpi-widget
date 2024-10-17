@@ -19,6 +19,7 @@ type IWidget = {
   name: string;
   script_id: string;
   widget_id: string;
+  comp_group?: string;
 };
 
 const BASE_PARAMS = {

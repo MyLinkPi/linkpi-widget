@@ -1,6 +1,10 @@
 type WidgetConfig = {
   id: string;
   name: string;
+  /**
+   * 分组名称
+   */
+  comp_group?: string;
 };
 
 /**

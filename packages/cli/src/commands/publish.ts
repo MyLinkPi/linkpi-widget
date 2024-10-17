@@ -46,12 +46,16 @@ export default class Publish extends Command {
       consola.info("scriptId", scriptId);
 
       const info = await getWidget(widgetConfig.id);
+
+      consola.info("adding to group: ", widgetConfig.comp_group);
+
       if (info) {
         consola.info("updating widget");
         await updateWidget({
           name: widgetConfig.name,
           script_id: scriptId,
           widget_id: widgetConfig.id,
+          comp_group: widgetConfig.comp_group,
         });
       } else {
         consola.info("adding widget");
@@ -59,6 +63,7 @@ export default class Publish extends Command {
           name: widgetConfig.name,
           script_id: scriptId,
           widget_id: widgetConfig.id,
+          comp_group: widgetConfig.comp_group,
         });
       }
 

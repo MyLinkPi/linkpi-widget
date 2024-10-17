@@ -32,7 +32,7 @@ export default class PublishDev extends Command {
         createViteBuildConfig({
           widgetId: widgetConfig.id,
           widgetTitle: widgetConfig.name,
-        }),
+        })
       );
 
       // 调用上传API
@@ -53,12 +53,16 @@ export default class PublishDev extends Command {
       // const widgetConfig = config.default;
 
       const info = await getWidget(widgetConfig.id);
+
+      consola.info("adding to group: ", widgetConfig.comp_group);
+
       if (info) {
         consola.info("updating widget");
         await updateWidget({
           name: widgetConfig.name,
           script_id: scriptId,
           widget_id: widgetConfig.id,
+          comp_group: widgetConfig.comp_group,
         });
       } else {
         consola.info("adding widget");
@@ -66,6 +70,7 @@ export default class PublishDev extends Command {
           name: widgetConfig.name,
           script_id: scriptId,
           widget_id: widgetConfig.id,
+          comp_group: widgetConfig.comp_group,
         });
       }
 
