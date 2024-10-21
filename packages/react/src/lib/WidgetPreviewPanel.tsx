@@ -38,6 +38,7 @@ const widgetUtilsContextValue = {
   DataSourceSettingWidgetSetting: () => <div>数据源设置</div>,
   GlobalConditionFilterLink: () => <div>link</div>,
   useWidgetInstanceListByGroupId: () => [],
+  useGlobalConditions: () => [],
 };
 
 export const WidgetPreviewPanel: FC<{

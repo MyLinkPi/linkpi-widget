@@ -1,6 +1,7 @@
 import {
   CurrentUser,
   TemplateNodeData,
+  ViewList,
   WidgetInstanceData,
 } from "@linkpi/core";
 import { PiSDK } from "@linkpi/sdk";
@@ -58,6 +59,7 @@ export const getWidgetUtilsContext = () =>
       id: string;
       onShowBtnClick?: () => void;
     }>,
+    useGlobalConditions: (_id: string) => [] as ViewList.ViewconditionV2,
   });
 
 export const useUrlQuerys = <
@@ -221,4 +223,14 @@ export const useWidgetInstanceListByGroupId = (groupId: string) => {
     useContext(context);
 
   return _useWidgetInstanceListByGroupId(groupId);
+};
+
+/**
+ * 传入当前组件实例id，获取全局筛选的条件
+ */
+export const useGlobalConditions = (id: string) => {
+  const context = getWidgetUtilsContext();
+  const { useGlobalConditions: _useGlobalConditions } = useContext(context);
+
+  return _useGlobalConditions(id);
 };
