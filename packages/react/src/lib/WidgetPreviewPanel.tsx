@@ -35,6 +35,9 @@ const widgetUtilsContextValue = {
   useNodeContentModalClose: () => ({ close: () => {} }),
   NodeViewComponent: () => <div>指定视图</div>,
   useWidgetInstancesByWidgetId: () => [],
+  DataSourceSettingWidgetSetting: () => <div>数据源设置</div>,
+  GlobalConditionFilterLink: () => <div>link</div>,
+  useWidgetInstanceListByGroupId: () => [],
 };
 
 export const WidgetPreviewPanel: FC<{
