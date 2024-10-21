@@ -51,6 +51,13 @@ export const getWidgetUtilsContext = () =>
     }>,
     useWidgetInstancesByWidgetId: (_widgetId: string) =>
       [] as WidgetInstanceData[],
+    useWidgetInstanceListByGroupId: (_groupId: string) =>
+      [] as WidgetInstanceData[],
+    DataSourceSettingWidgetSetting: ((_props) => null) as FC,
+    GlobalConditionFilterLink: ((_props) => null) as FC<{
+      id: string;
+      onShowBtnClick?: () => void;
+    }>,
   });
 
 export const useUrlQuerys = <
@@ -143,6 +150,9 @@ export const useTempateProp = (templateId: string, propIndex: number) => {
   return propInfo;
 };
 
+/**
+ * 获取 PiSDK 实例
+ */
 export const usePiSDK = () => {
   const context = getWidgetUtilsContext();
   const { piSDK } = useContext(context);
@@ -160,6 +170,9 @@ export const useCurrentNode = () => {
   return _useCurrentNode();
 };
 
+/**
+ * 获取节点树数据
+ */
 export const useNodeTreeData = () => {
   const context = getWidgetUtilsContext();
   const { useNodeTreeData: _useNodeTreeData } = useContext(context);
@@ -167,6 +180,9 @@ export const useNodeTreeData = () => {
   return _useNodeTreeData();
 };
 
+/**
+ * 获取节点跳转方法
+ */
 export const useJumpNode = () => {
   const context = getWidgetUtilsContext();
   const { useJumpNode: _useJumpNode } = useContext(context);
@@ -174,6 +190,9 @@ export const useJumpNode = () => {
   return _useJumpNode();
 };
 
+/**
+ * 获取节点内容弹窗关闭方法
+ */
 export const useNodeContentModalClose = () => {
   const context = getWidgetUtilsContext();
   const { useNodeContentModalClose: _useNodeContentModalClose } =
@@ -182,10 +201,24 @@ export const useNodeContentModalClose = () => {
   return _useNodeContentModalClose();
 };
 
+/**
+ * 根据组件组件类型获取自定义组件实例列表
+ */
 export const useWidgetInstancesByWidgetId = (widgetId: string) => {
   const context = getWidgetUtilsContext();
   const { useWidgetInstancesByWidgetId: _useWidgetInstancesByWidgetId } =
     useContext(context);
 
   return _useWidgetInstancesByWidgetId(widgetId);
+};
+
+/**
+ * 根据组件分组获取自定义组件实例列表
+ */
+export const useWidgetInstanceListByGroupId = (groupId: string) => {
+  const context = getWidgetUtilsContext();
+  const { useWidgetInstanceListByGroupId: _useWidgetInstanceListByGroupId } =
+    useContext(context);
+
+  return _useWidgetInstanceListByGroupId(groupId);
 };
