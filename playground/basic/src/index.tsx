@@ -3,10 +3,8 @@ import { defineWidget } from "@mylinkpi/widget-core";
 import {
   useCurrentUser,
   useNodeContentModalClose,
-  useWidgetInstanceByWidgetId,
   useWidgetSetting,
-  useWidgetSharedState,
-} from "@mylinkpi/widget-react";
+  useWidgetSharedState} from "@mylinkpi/widget-react";
 import { Button, Form, Input, TimePicker } from "antd";
 import dayjs from "dayjs";
 import React from "react";

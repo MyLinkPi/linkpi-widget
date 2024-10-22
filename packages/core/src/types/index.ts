@@ -27,19 +27,19 @@ export interface IWidgetSize {
   minWidth?: number;
 }
 
-export type WidgetSetting<T extends unknown = unknown> = FC<
+export type WidgetSetting<T extends JsonObject = JsonObject> = FC<
   T & {
     id: string;
   }
 >;
 
-export type WidgetPreivew<T extends unknown = unknown> = FC<
+export type WidgetPreivew<T extends JsonObject = JsonObject> = FC<
   T & {
     id: string;
   }
 >;
 
-export type WidgetRender<T extends unknown = unknown> = FC<
+export type WidgetRender<T extends JsonObject = JsonObject> = FC<
   T & {
     id: string;
   }
