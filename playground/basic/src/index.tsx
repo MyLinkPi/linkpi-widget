@@ -22,7 +22,8 @@ const config = defineWidget<BasicExampleConfig>()({
   },
   basic: { defaultHeight: 8, defaultWidth: 8, minHeight: 8, minWidth: 8 },
   metadata: { title: "默认" },
-  render: () => {
+  render: ({ id }) => {
+    console.log(id)
     const [sharedState, setSharedState] = useWidgetSharedState<{
       globalText: string;
     }>();
