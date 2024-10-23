@@ -39,6 +39,9 @@ const widgetUtilsContextValue = {
   GlobalConditionFilterLink: () => <div>link</div>,
   useWidgetInstanceListByGroupId: () => [],
   useGlobalConditions: () => [],
+  useSetExtraGlobalConditions: () => {
+    return () => {};
+  },
 };
 
 export const WidgetPreviewPanel: FC<{
