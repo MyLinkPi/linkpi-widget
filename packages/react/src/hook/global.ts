@@ -60,6 +60,10 @@ export const getWidgetUtilsContext = () =>
       onShowBtnClick?: () => void;
     }>,
     useGlobalConditions: (_id: string) => [] as ViewList.ViewconditionV2,
+    useSetExtraGlobalConditions: (
+      _targetId: string,
+      _conditions: ViewList.ViewconditionV2
+    ) => {},
   });
 
 export const useUrlQuerys = <
@@ -233,4 +237,15 @@ export const useGlobalConditions = (id: string) => {
   const { useGlobalConditions: _useGlobalConditions } = useContext(context);
 
   return _useGlobalConditions(id);
+};
+
+/**
+ * 设置组件的额外全局筛选条件
+ */
+export const useSetExtraGlobalConditions = () => {
+  const context = getWidgetUtilsContext();
+  const { useSetExtraGlobalConditions: _useSetExtraGlobalConditions } =
+    useContext(context);
+
+  return _useSetExtraGlobalConditions;
 };

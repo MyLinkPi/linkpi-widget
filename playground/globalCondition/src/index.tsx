@@ -4,6 +4,7 @@ import {
   DataSourceSettingWidgetSetting,
   useGlobalConditions,
   useWidgetSetting,
+  ViewList,
 } from "@mylinkpi/widget-react";
 import { Form, Input } from "antd";
 import React from "react";
@@ -27,6 +28,8 @@ const config = defineWidget<BasicExampleConfig>()({
     console.log("当前组件实例的 id", id);
     const conditions = useGlobalConditions(id);
     console.log("全局筛选", conditions);
+    const [setting] = useWidgetSetting<BasicExampleConfig>();
+    console.log("组件设置", setting.conditions);
 
     return (
       <div>
