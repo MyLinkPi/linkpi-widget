@@ -203,6 +203,8 @@ export const useWidgetInstancesByWidgetId = (widgetId: string) => {
 export const useWidgetInstanceList = () => {
   const context = getWidgetUtilsContext();
   const { useWidgetInstanceList: _useWidgetInstanceList } = useContext(context);
+
+  return _useWidgetInstanceList();
 };
 
 /**
