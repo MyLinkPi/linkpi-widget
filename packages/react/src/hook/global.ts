@@ -1,9 +1,4 @@
-import {
-  CurrentUser,
-  TemplateNodeData,
-  ViewList,
-  WidgetInstanceData,
-} from "@linkpi/core";
+import { CurrentUser, TemplateNodeData, ViewList, WidgetInstanceData } from "@linkpi/core";
 import { PiSDK } from "@linkpi/sdk";
 import { pick } from "ramda";
 import { FC, useContext, useMemo } from "react";
@@ -14,10 +9,7 @@ const hackKey = "widget_utils";
 
 type CurrentUserForWidget = Omit<CurrentUser, "organization">;
 type TemplateInfo = CurrentUser.TemplateInfo;
-type TemplateList = Pick<
-  CurrentUser.TemplateInfo,
-  "template_id" | "name" | "status"
->[];
+type TemplateList = Pick<CurrentUser.TemplateInfo, "template_id" | "name" | "status">[];
 type TemplatePropList = (Pick<CurrentUser.TemplateProp, "name" | "type"> & {
   propIndex: number;
 })[];
@@ -35,8 +27,7 @@ export const getWidgetUtilsContext = () =>
     useCurrentUser: () => ({}) as unknown as CurrentUserForWidget,
     useCurrentOrgId: () => "" as string,
     useTemplateList: (_orgId: string) => [] as TemplateList,
-    useTemplateInfo: (_orgId: string, _templateId: string) =>
-      ({}) as TemplateInfo | undefined,
+    useTemplateInfo: (_orgId: string, _templateId: string) => ({}) as TemplateInfo | undefined,
     piSDK: {} as PiSDK,
     useCurrentNode: () => ({}) as TemplateNodeData,
     useNodeTreeData: () => [] as NodeTreeData[],
@@ -50,25 +41,19 @@ export const getWidgetUtilsContext = () =>
       nodeId: string;
       viewId: string;
     }>,
-    useWidgetInstancesByWidgetId: (_widgetId: string) =>
-      [] as WidgetInstanceData[],
-    useWidgetInstanceListByGroupId: (_groupId: string) =>
-      [] as WidgetInstanceData[],
+    useWidgetInstanceList: () => [] as WidgetInstanceData[],
+    useWidgetInstancesByWidgetId: (_widgetId: string) => [] as WidgetInstanceData[],
+    useWidgetInstanceListByGroupId: (_groupId: string) => [] as WidgetInstanceData[],
     DataSourceSettingWidgetSetting: ((_props) => null) as FC,
     GlobalConditionFilterLink: ((_props) => null) as FC<{
       id: string;
       onShowBtnClick?: () => void;
     }>,
     useGlobalConditions: (_id: string) => [] as ViewList.ViewconditionV2,
-    useSetExtraGlobalConditions: (
-      _targetId: string,
-      _conditions: ViewList.ViewconditionV2
-    ) => {},
+    useSetExtraGlobalConditions: (_targetId: string, _conditions: ViewList.ViewconditionV2) => {},
   });
 
-export const useUrlQuerys = <
-  T extends Record<string, string> = Record<string, string>,
->() => {
+export const useUrlQuerys = <T extends Record<string, string> = Record<string, string>>() => {
   const context = getWidgetUtilsContext();
   const { useUrlQuerys: _useUrlQuerys } = useContext(context);
 
@@ -135,8 +120,7 @@ export const useTempatePropList = (templateId: string) => {
           propIndex,
         }))
         .filter((p) => p.name && p.type)
-        .map((p) => pick(["name", "type", "propIndex"], p)) ||
-        []) as unknown as TemplatePropList,
+        .map((p) => pick(["name", "type", "propIndex"], p)) || []) as unknown as TemplatePropList,
     [tempInfo?.prop]
   );
 
@@ -201,8 +185,7 @@ export const useJumpNode = () => {
  */
 export const useNodeContentModalClose = () => {
   const context = getWidgetUtilsContext();
-  const { useNodeContentModalClose: _useNodeContentModalClose } =
-    useContext(context);
+  const { useNodeContentModalClose: _useNodeContentModalClose } = useContext(context);
 
   return _useNodeContentModalClose();
 };
@@ -212,10 +195,14 @@ export const useNodeContentModalClose = () => {
  */
 export const useWidgetInstancesByWidgetId = (widgetId: string) => {
   const context = getWidgetUtilsContext();
-  const { useWidgetInstancesByWidgetId: _useWidgetInstancesByWidgetId } =
-    useContext(context);
+  const { useWidgetInstancesByWidgetId: _useWidgetInstancesByWidgetId } = useContext(context);
 
   return _useWidgetInstancesByWidgetId(widgetId);
+};
+
+export const useWidgetInstanceList = () => {
+  const context = getWidgetUtilsContext();
+  const { useWidgetInstanceList: _useWidgetInstanceList } = useContext(context);
 };
 
 /**
@@ -223,8 +210,7 @@ export const useWidgetInstancesByWidgetId = (widgetId: string) => {
  */
 export const useWidgetInstanceListByGroupId = (groupId: string) => {
   const context = getWidgetUtilsContext();
-  const { useWidgetInstanceListByGroupId: _useWidgetInstanceListByGroupId } =
-    useContext(context);
+  const { useWidgetInstanceListByGroupId: _useWidgetInstanceListByGroupId } = useContext(context);
 
   return _useWidgetInstanceListByGroupId(groupId);
 };
@@ -244,8 +230,7 @@ export const useGlobalConditions = (id: string) => {
  */
 export const useSetExtraGlobalConditions = () => {
   const context = getWidgetUtilsContext();
-  const { useSetExtraGlobalConditions: _useSetExtraGlobalConditions } =
-    useContext(context);
+  const { useSetExtraGlobalConditions: _useSetExtraGlobalConditions } = useContext(context);
 
   return _useSetExtraGlobalConditions;
 };
