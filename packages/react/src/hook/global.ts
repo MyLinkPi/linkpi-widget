@@ -50,7 +50,7 @@ export const getWidgetUtilsContext = () =>
       onShowBtnClick?: () => void;
     }>,
     useGlobalConditions: (_id: string) => [] as ViewList.ViewconditionV2,
-    useSetExtraGlobalConditions: (_targetId: string, _conditions: ViewList.ViewconditionV2) => {},
+    useSetExtraGlobalConditions: () => (_targetId: string, _conditions: ViewList.ViewconditionV2) => {},
   });
 
 export const useUrlQuerys = <T extends Record<string, string> = Record<string, string>>() => {
@@ -234,5 +234,5 @@ export const useSetExtraGlobalConditions = () => {
   const context = getWidgetUtilsContext();
   const { useSetExtraGlobalConditions: _useSetExtraGlobalConditions } = useContext(context);
 
-  return _useSetExtraGlobalConditions;
+  return _useSetExtraGlobalConditions();
 };
