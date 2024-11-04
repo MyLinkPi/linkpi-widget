@@ -1,5 +1,7 @@
 import { Command, Flags } from "@oclif/core";
 
+import { loginLinkPi } from "@/utils/login.js";
+
 import { getWidget } from "../services/index.js";
 import { getWidget as getDevWidget } from "../services/index-dev.js";
 import { getWidgetConfig } from "../utils/index.js";
@@ -17,6 +19,8 @@ export default class Info extends Command {
   public async run(): Promise<void> {
     const { flags } = await this.parse(Info);
     const { dev } = flags;
+
+    await loginLinkPi();
 
     const widgetConfig = await getWidgetConfig();
 
