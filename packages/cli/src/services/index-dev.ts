@@ -1,4 +1,6 @@
+import { getAdTokenSync } from "@mylinkpi/cli-login";
 import axios from "axios";
+
 
 const request = axios.create({
   baseURL: "https://test-inner.linkerpi.com:8008/",
@@ -31,7 +33,7 @@ export const addWidget = (widget: IWidget) =>
   request({
     data: {
       ...widget,
-      ...BASE_PARAMS,
+      ...getAdTokenSync(),
       config: {},
       org_id: "FC378A5273D8BEF52C3AB5157B817204",
       public: true,
@@ -47,7 +49,7 @@ export const updateWidget = (widget: IWidget) =>
   request({
     data: {
       ...widget,
-      ...BASE_PARAMS,
+      ...getAdTokenSync(),
       config: {},
       org_id: "FC378A5273D8BEF52C3AB5157B817204",
       public: true,

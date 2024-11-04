@@ -12,6 +12,7 @@ import {
   uploadScript,
 } from "../services/index-dev.js";
 import { getWidgetConfig } from "../utils/index.js";
+import { loginLinkPi } from "../utils/login.js";
 import { createViteBuildConfig } from "../utils/vite.js";
 
 export default class PublishDev extends Command {
@@ -81,6 +82,7 @@ export default class PublishDev extends Command {
   }
 
   async run() {
+    await loginLinkPi("linkpi");
     consola.start("Building and publishing the widget...");
     await this.buildAndUpload();
   }
