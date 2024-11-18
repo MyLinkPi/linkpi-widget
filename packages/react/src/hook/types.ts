@@ -8,7 +8,7 @@ export type ICascaderValues = ICascaderValue[] | ICascaderValue[][];
 
 export type IDateValues = {
   selected: string;
-  selectedType: "year" | "month" | "day";
+  selectedType: "year" | "month" | "date";
 };
 
 export type GlobalConditionFilterValue = Record<
