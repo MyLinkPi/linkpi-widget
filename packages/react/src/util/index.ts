@@ -1,8 +1,7 @@
 import { Draft } from "immer";
 import { type Context, createContext } from "react";
-import { JsonObject } from "type-fest";
 
-export type Updater<T extends JsonObject> = (draft: Draft<T>) => void;
+export type Updater<T> = (draft: Draft<T>) => void;
 
 /**
  * 获取宿主环境提供的 context

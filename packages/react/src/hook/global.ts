@@ -67,7 +67,7 @@ export const getWidgetUtilsContext = () =>
       () => (_targetId: string, _conditions: ViewList.ViewconditionV2) => {},
     useGlobalConditionFilterValue: (_id: string) =>
       ({}) as GlobalConditionFilterValue,
-    useAllGlobalConditionFilterValue: (_id: string) =>
+    useAllGlobalConditionFilterValue: () =>
       ({}) as Record<string, GlobalConditionFilterValue>,
     GlobalConditionFilterItemSelect: ((_props) => null) as FC<{
       value?: [string, string];

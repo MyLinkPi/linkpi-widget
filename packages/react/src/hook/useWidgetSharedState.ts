@@ -8,18 +8,14 @@ const hackKey = "widget_shared_state";
 /**
  * 返回单例的 context
  */
-export const getWidgetSharedStateContext = <
-  T extends JsonObject = JsonObject,
->() =>
+export const getWidgetSharedStateContext = <T = JsonObject>() =>
   getGlobalContext(hackKey, {
     value: {} as T,
-     
+
     setValue: (_newValue: T) => {},
   });
 
-export const useWidgetSharedState = <
-  T extends JsonObject = JsonObject,
->() => {
+export const useWidgetSharedState = <T = JsonObject>() => {
   const WidgetSharedStateContext = getWidgetSharedStateContext();
   const { value, setValue } = useContext(WidgetSharedStateContext);
 
