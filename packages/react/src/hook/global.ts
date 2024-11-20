@@ -280,11 +280,11 @@ export const useGlobalConditionFilterValue = (id: string) => {
 /**
  * 获取所有全局筛选表单的表单值
  */
-export const useAllGlobalConditionFilterValue = (id: string) => {
+export const useAllGlobalConditionFilterValue = () => {
   const context = getWidgetUtilsContext();
   const {
     useAllGlobalConditionFilterValue: _useAllGlobalConditionFilterValue,
   } = useContext(context);
 
-  return _useAllGlobalConditionFilterValue(id);
+  return _useAllGlobalConditionFilterValue();
 };
