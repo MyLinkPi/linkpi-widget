@@ -73,6 +73,17 @@ export const getWidgetUtilsContext = () =>
       value?: [string, string];
       onChange?: (value?: [string, string]) => void;
     }>,
+    ViewSelect: ((_props) => null) as FC<{
+      value?: string;
+      onChange?: (
+        value?: string,
+        option?: { value: string; label: string; nodeId: string }
+      ) => void;
+    }>,
+    TemplateSelect: ((_props) => null) as FC<{
+      value?: string;
+      onChange?: (value?: string) => void;
+    }>,
   });
 
 export const useUrlQuerys = <

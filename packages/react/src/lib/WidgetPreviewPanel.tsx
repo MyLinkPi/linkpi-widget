@@ -48,6 +48,8 @@ const widgetUtilsContextValue = {
   useAllGlobalConditionFilterValue: () =>
     ({}) as Record<string, GlobalConditionFilterValue>,
   GlobalConditionFilterItemSelect: () => <div>筛选项-选择器</div>,
+  ViewSelect: () => <div>视图选择器</div>,
+  TemplateSelect: () => <div>模板选择器</div>,
 };
 
 export const WidgetPreviewPanel: FC<{
