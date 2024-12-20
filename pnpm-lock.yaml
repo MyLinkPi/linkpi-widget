@@ -182,14 +182,14 @@ importers:
         specifier: ^1.2.2
         version: 1.2.2(eslint@9.13.0(jiti@1.21.6))
       '@linkpi/core':
-        specifier: ^1.0.0-rc.36
-        version: 1.0.0-rc.36(antd@4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
+        specifier: ^1.0.0-rc.52
+        version: 1.0.0-rc.52(antd@4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
       '@linkpi/request':
-        specifier: ^1.0.0-rc.36
-        version: 1.0.0-rc.36(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
+        specifier: ^1.0.0-rc.52
+        version: 1.0.0-rc.52(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
       '@linkpi/sdk':
-        specifier: ^1.0.0-rc.36
-        version: 1.0.0-rc.36(@linkpi/core@1.0.0-rc.36(antd@4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3)))(@linkpi/request@1.0.0-rc.36(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3)))(@linkpi/utils@1.0.0-rc.36(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3)))(sass@1.80.4)(typescript@5.6.3)(uuid@10.0.0)(vue-tsc@1.8.27(typescript@5.6.3))
+        specifier: ^1.0.0-rc.52
+        version: 1.0.0-rc.52(@linkpi/core@1.0.0-rc.52(antd@4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3)))(@linkpi/request@1.0.0-rc.52(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3)))(@linkpi/utils@1.0.0-rc.52(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3)))(sass@1.80.4)(typescript@5.6.3)(uuid@10.0.0)(vue-tsc@1.8.27(typescript@5.6.3))
       '@types/ramda':
         specifier: ^0.30.2
         version: 0.30.2
@@ -728,6 +728,11 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
 
+  '@babel/parser@7.26.3':
+    resolution: {integrity: sha512-WJ/CvmY8Mea8iDXo6a7RK2wbmJITT5fN3BEkRuFlxVyNx8jOKIIhmC4fSkTcPcf8JyavbBwIe6OpiCOBXt/IcA==}
+    engines: {node: '>=6.0.0'}
+    hasBin: true
+
   '@babel/plugin-transform-react-jsx-self@7.24.7':
     resolution: {integrity: sha512-fOPQYbGSgH0HUp4UJO4sMBFjY6DuWq+2i8rixyUMb3CdGixs/gccURvYOAhajBdKDoGajFr3mUq5rH3phtkGzw==}
     engines: {node: '>=6.9.0'}
@@ -778,6 +783,10 @@ packages:
 
   '@babel/types@7.26.0':
     resolution: {integrity: sha512-Z/yiTPj+lDVnF7lWeKCIJzaIkI0vYO87dMpZ4bg4TDrFe4XXLFWL1TbXU27gBP3QccxV9mZICCrnjnYlJjXHOA==}
+    engines: {node: '>=6.9.0'}
+
+  '@babel/types@7.26.3':
+    resolution: {integrity: sha512-vN5p+1kl59GVKMvTHt55NzzmYVxprfJD+ql7U9NFIfKCBkYE55LYtS+WtPlaYOyzydrKI8Nezd+aZextrd+FMA==}
     engines: {node: '>=6.9.0'}
 
   '@cspotcode/source-map-support@0.8.1':
@@ -1335,31 +1344,30 @@ packages:
     resolution: {integrity: sha512-f5DRIOZf7wxogefH03RjMPMdBF7ADTWUMoOs9kaJo06EfwF+aFhMZMDZxHg/Xe12hptN9xoZjGso2fdjapBRIA==}
     engines: {node: '>=10'}
 
-  '@linkpi/core@1.0.0-rc.36':
-    resolution: {integrity: sha512-4s8I5I2Rpq1emljvM++saWacOfKjzd+BnDppyX4H6K6hucKrCg2gadEQ2tKf5+aHLw8Oq0GFWJ7R3kfT9B+jvQ==}
+  '@linkpi/core@1.0.0-rc.52':
+    resolution: {integrity: sha512-AZs5Br9YP+AXMWbArzID42ZHK+FSEZnisa6Ci7KoLtTenxWnUtZQblU+Zzf3N6zWE9CFhfvZTHDSv1eBFzoezw==}
     peerDependencies:
       antd: '4'
-      react: ^18.2.0
 
-  '@linkpi/elecwatt@1.0.0-rc.36':
-    resolution: {integrity: sha512-8L7b95JeJHr1xKsA0dir50MQsmi1qfdZpOoJ+JBe7fmGSzbQhfbu7R+XSOxz1TxufQlrvKdWJ9kzWWoRFBYBBw==}
+  '@linkpi/elecwatt@1.0.0-rc.52':
+    resolution: {integrity: sha512-djO6ERZawRt2u5Mx7BDXwMfmL5H0H67Q9+xRzWdO2zZXKRsNi41XflQfzrzbV0fBQ+Fpklh0xb589xbgKhJO9g==}
 
   '@linkpi/lint@1.0.9':
     resolution: {integrity: sha512-QeHkfta3J/KmyzkWaBEUakD6yXdfORhnABlDTBcCRPIWZY3eocWAEczsOyEzHdZAZYpHe8NeP17bLlvvVAOv8w==}
 
-  '@linkpi/request@1.0.0-rc.36':
-    resolution: {integrity: sha512-CwFf+IxNiPeSFk5AuIzTVgGzN8OGEux1fklNhR4RTjEDmBpaSYpEEBSHy1ManIyxy1aAA3AGyXUl/0cISE7YjA==}
+  '@linkpi/request@1.0.0-rc.52':
+    resolution: {integrity: sha512-UtdN4hgGhacPY0q2j1hOmX4RLjcb314QxLF8I4n4CoS3hC+kQV+pUW72vEykhLOSHIgy018+9e/pbaVnoTZifQ==}
 
-  '@linkpi/sdk@1.0.0-rc.36':
-    resolution: {integrity: sha512-esYNvlz2Tz+spvVHGML/y0rmOCoEIUjik6a9Afm2bECE+pjOP8MybPgXBJUW8Hi+gaOZ7Eqa9cJCM43cLxnUkg==}
+  '@linkpi/sdk@1.0.0-rc.52':
+    resolution: {integrity: sha512-3aBWpMynFmOcttZtcY8mFo5Yt50R81JSVsDZpBexv7H1fKpTZKFq+lovb8/Sq4tLYsrDTehZz9SFLSbIMxBnEQ==}
     peerDependencies:
-      '@linkpi/core': 1.0.0-rc.36
-      '@linkpi/request': 1.0.0-rc.36
-      '@linkpi/utils': 1.0.0-rc.36
+      '@linkpi/core': 1.0.0-rc.52
+      '@linkpi/request': 1.0.0-rc.52
+      '@linkpi/utils': 1.0.0-rc.52
       uuid: ^9
 
-  '@linkpi/utils@1.0.0-rc.36':
-    resolution: {integrity: sha512-1Yh3EwFVNyJnBQmuMr3/luDO0ADVwCP47fSaViaCYruESrIYIziVKY7IrOqkAtDn4EwYzEImb01mozGjVO+3Wg==}
+  '@linkpi/utils@1.0.0-rc.52':
+    resolution: {integrity: sha512-5DyHYh3yfNj6KhRTNhwPDYunOBShh/Qom7GapzWXT/je+VWVq2mapEvd4jXDFCJi8G2dDDaaJ6dtpD5XCue4tg==}
 
   '@mylinkpi/cli-login@1.0.3':
     resolution: {integrity: sha512-+egKYdJ+lA4ZNA/TSlcIMBya4Ep6/P0D0d54bFbPls5dtOj+vs3S5xMEnxH+oMAWYtAgEAQU3FY2nKY3U5+nlw==}
@@ -1948,8 +1956,8 @@ packages:
     resolution: {integrity: sha512-+PmQX0PiAYPMeVYe237LJAYvOMYW1j2rH5YROyS3b4CTVJum34HfRvKvAzozHAQG0TnHNdUfY9nCeUyRAs//cw==}
     engines: {node: '>=14.16'}
 
-  '@tanstack/query-core@5.61.5':
-    resolution: {integrity: sha512-iG5vqurEOEbv+paP6kW3zPENa99kSIrd1THISJMaTwVlJ+N5yjVDNOUwp9McK2DWqWCXM3v13ubBbAyhxT78UQ==}
+  '@tanstack/query-core@5.62.8':
+    resolution: {integrity: sha512-4fV31vDsUyvNGrKIOUNPrZztoyL187bThnoQOvAXEVlZbSiuPONpfx53634MKKdvsDir5NyOGm80ShFaoHS/mw==}
 
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
@@ -2161,8 +2169,8 @@ packages:
     resolution: {integrity: sha512-yqXL+k5rr8+ZRpOAntkaaRgWgE5o8ESAj5DyRmVTCSoZxXmqemb9Dd7T4i5UzwuERdLAJUy6XzR9zFVuf0kzkw==}
     engines: {node: '>= 4.0.0'}
 
-  ahooks@3.8.1:
-    resolution: {integrity: sha512-JoP9+/RWO7MnI/uSKdvQ8WB10Y3oo1PjLv+4Sv4Vpm19Z86VUMdXh+RhWvMGxZZs06sq2p0xVtFk8Oh5ZObsoA==}
+  ahooks@3.8.4:
+    resolution: {integrity: sha512-39wDEw2ZHvypaT14EpMMk4AzosHWt0z9bulY0BeDsvc9PqJEV+Kjh/4TZfftSsotBMq52iYIOFPd3PR56e0ZJg==}
     engines: {node: '>=8.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -2170,8 +2178,8 @@ packages:
   ajv@6.12.6:
     resolution: {integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==}
 
-  ali-oss@6.21.0:
-    resolution: {integrity: sha512-dRvKWO/GJEa6dlsCnvmgHIbU5+yE/SmZsE4kZRGNU7Uotr9uIkQWGqv4szLTxRSxWv3YgL+BZgt+swIgitYGjA==}
+  ali-oss@6.22.0:
+    resolution: {integrity: sha512-X8CHo+wsjCBvDaEvuibFOi3SZxiCBZSRUURrXH0upoVwu3SuW3e+PTVK7xw+uN6EyTcAESqrngrQimhp8iBzsQ==}
     engines: {node: '>=8'}
 
   ansi-escapes@4.3.2:
@@ -2258,6 +2266,9 @@ packages:
 
   axios@1.7.7:
     resolution: {integrity: sha512-S4kL7XrjgBmvdGut0sN3yJxqYzrDOnivkBiN0OFs6hLiUam3UPvswUo0kqGyhqUZGEOytHyumEdXsAkgCOUf3Q==}
+
+  axios@1.7.9:
+    resolution: {integrity: sha512-LhLcE7Hbiryz8oMDdDptSrWowmB4Bl6RCt6sIJKpRB4XtVf0iEgewX3au/pJqm+Py1kCASkb/FFKjxQaLtxJvw==}
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -4731,8 +4742,8 @@ packages:
       '@swc/wasm':
         optional: true
 
-  ts-pattern@5.5.0:
-    resolution: {integrity: sha512-jqbIpTsa/KKTJYWgPNsFNbLVpwCgzXfFJ1ukNn4I8hMwyQzHMJnk/BqWzggB0xpkILuKzaO/aMYhS0SkaJyKXg==}
+  ts-pattern@5.6.0:
+    resolution: {integrity: sha512-SL8u60X5+LoEy9tmQHWCdPc2hhb2pKI6I1tU5Jue3v8+iRqZdcT3mWPwKKJy1fMfky6uha82c8ByHAE8PMhKHw==}
 
   ts-toolbelt@9.6.0:
     resolution: {integrity: sha512-nsZd8ZeNUzukXPlJmTBwUAuABDe/9qtVDelJeT/qW0ow3ZS3BsQJtNkan1802aM9Uf68/Y8ljw86Hu0h5IUW3w==}
@@ -4753,8 +4764,8 @@ packages:
   tslib@2.6.3:
     resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
 
-  tsyringe-neo@5.0.3:
-    resolution: {integrity: sha512-sDaPY/UTuq9Zi2nn1UPBcO14UN6zCj4GNFIi0crETvwQU61G7uwr8yEL7OIGRNGYSE6TqhAAXGhWE0pSGXuq4A==}
+  tsyringe-neo@5.1.0:
+    resolution: {integrity: sha512-x6QAckY85YLGE980TIR5Xle3s76nhBNYu0kr6UlLAWiPqt4S6PgbbvNV4cjZlItv3ka8adcGYG2Wy/I2yxcqdg==}
     engines: {node: '>= 18.0.0'}
 
   tunnel-agent@0.6.0:
@@ -4778,6 +4789,10 @@ packages:
 
   type-fest@4.26.1:
     resolution: {integrity: sha512-yOGpmOAL7CkKe/91I5O3gPICmJNLJ1G4zFYVAsRHg7M64biSnPtRj0WNQt++bRkjYOqjWXrhnUw1utzmVErAdg==}
+    engines: {node: '>=16'}
+
+  type-fest@4.30.2:
+    resolution: {integrity: sha512-UJShLPYi1aWqCdq9HycOL/gwsuqda1OISdBO3t8RlXQC4QvtuIz4b5FCfe2dQIWEpmlRExKmcTBfP1r9bhY7ig==}
     engines: {node: '>=16'}
 
   types-ramda@0.30.1:
@@ -5898,6 +5913,10 @@ snapshots:
     dependencies:
       '@babel/types': 7.26.0
 
+  '@babel/parser@7.26.3':
+    dependencies:
+      '@babel/types': 7.26.3
+
   '@babel/plugin-transform-react-jsx-self@7.24.7(@babel/core@7.25.7)':
     dependencies:
       '@babel/core': 7.25.7
@@ -5970,6 +5989,11 @@ snapshots:
       to-fast-properties: 2.0.0
 
   '@babel/types@7.26.0':
+    dependencies:
+      '@babel/helper-string-parser': 7.25.9
+      '@babel/helper-validator-identifier': 7.25.9
+
+  '@babel/types@7.26.3':
     dependencies:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
@@ -6353,16 +6377,16 @@ snapshots:
       string-argv: 0.3.2
       type-detect: 4.1.0
 
-  '@linkpi/core@1.0.0-rc.36(antd@4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))':
+  '@linkpi/core@1.0.0-rc.52(antd@4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))':
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
-      '@babel/parser': 7.26.2
+      '@babel/parser': 7.26.3
       '@babel/runtime': 7.26.0
-      '@linkpi/elecwatt': 1.0.0-rc.36(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
-      '@linkpi/utils': 1.0.0-rc.36(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
+      '@linkpi/elecwatt': 1.0.0-rc.52(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
+      '@linkpi/utils': 1.0.0-rc.52(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
       '@uni/env': 1.1.1
-      ahooks: 3.8.1(react@18.3.1)
-      ali-oss: 6.21.0
+      ahooks: 3.8.4(react@18.3.1)
+      ali-oss: 6.22.0
       antd: 4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       dayjs: 1.11.13
       int64-buffer: 1.0.1
@@ -6371,21 +6395,21 @@ snapshots:
       ot-json1: '@mylinkpi/ot-json1@2.0.3'
       quill-delta: 5.1.0
       ramda: 0.30.1
-      react: 18.3.1
       reconnecting-websocket: '@mylinkpi/reconnecting-websocket@4.4.2'
       rich-text: '@mylinkpi/rich-text@4.1.1'
       sharedb: '@mylinkpi/sharedb@3.3.2'
-      ts-pattern: 5.5.0
-      type-fest: 4.26.1
+      ts-pattern: 5.6.0
+      type-fest: 4.30.2
       uuid: 8.3.2
     transitivePeerDependencies:
       - proxy-agent
+      - react
       - sass
       - supports-color
       - typescript
       - vue-tsc
 
-  '@linkpi/elecwatt@1.0.0-rc.36(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))':
+  '@linkpi/elecwatt@1.0.0-rc.52(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))':
     dependencies:
       unbuild: 2.0.0(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
     transitivePeerDependencies:
@@ -6401,9 +6425,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@linkpi/request@1.0.0-rc.36(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))':
+  '@linkpi/request@1.0.0-rc.52(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))':
     dependencies:
-      axios: 1.7.7
+      axios: 1.7.9
       unbuild: 2.0.0(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
     transitivePeerDependencies:
       - debug
@@ -6412,18 +6436,18 @@ snapshots:
       - typescript
       - vue-tsc
 
-  '@linkpi/sdk@1.0.0-rc.36(@linkpi/core@1.0.0-rc.36(antd@4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3)))(@linkpi/request@1.0.0-rc.36(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3)))(@linkpi/utils@1.0.0-rc.36(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3)))(sass@1.80.4)(typescript@5.6.3)(uuid@10.0.0)(vue-tsc@1.8.27(typescript@5.6.3))':
+  '@linkpi/sdk@1.0.0-rc.52(@linkpi/core@1.0.0-rc.52(antd@4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3)))(@linkpi/request@1.0.0-rc.52(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3)))(@linkpi/utils@1.0.0-rc.52(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3)))(sass@1.80.4)(typescript@5.6.3)(uuid@10.0.0)(vue-tsc@1.8.27(typescript@5.6.3))':
     dependencies:
       '@abraham/reflection': 0.12.0
-      '@linkpi/core': 1.0.0-rc.36(antd@4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
-      '@linkpi/request': 1.0.0-rc.36(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
-      '@linkpi/utils': 1.0.0-rc.36(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
-      '@tanstack/query-core': 5.61.5
+      '@linkpi/core': 1.0.0-rc.52(antd@4.24.16(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
+      '@linkpi/request': 1.0.0-rc.52(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
+      '@linkpi/utils': 1.0.0-rc.52(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
+      '@tanstack/query-core': 5.62.8
       emittery: 1.0.3
       ramda: 0.29.1
-      ts-pattern: 5.5.0
-      tsyringe-neo: 5.0.3
-      type-fest: 4.26.1
+      ts-pattern: 5.6.0
+      tsyringe-neo: 5.1.0
+      type-fest: 4.30.2
       unbuild: 2.0.0(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
       uuid: 10.0.0
     transitivePeerDependencies:
@@ -6432,7 +6456,7 @@ snapshots:
       - typescript
       - vue-tsc
 
-  '@linkpi/utils@1.0.0-rc.36(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))':
+  '@linkpi/utils@1.0.0-rc.52(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))':
     dependencies:
       ramda: 0.30.1
       unbuild: 2.0.0(sass@1.80.4)(typescript@5.6.3)(vue-tsc@1.8.27(typescript@5.6.3))
@@ -7130,7 +7154,7 @@ snapshots:
     dependencies:
       defer-to-connect: 2.0.1
 
-  '@tanstack/query-core@5.61.5': {}
+  '@tanstack/query-core@5.62.8': {}
 
   '@trysound/sax@0.2.0': {}
 
@@ -7387,7 +7411,7 @@ snapshots:
     dependencies:
       humanize-ms: 1.2.1
 
-  ahooks@3.8.1(react@18.3.1):
+  ahooks@3.8.4(react@18.3.1):
     dependencies:
       '@babel/runtime': 7.26.0
       dayjs: 1.11.13
@@ -7407,7 +7431,7 @@ snapshots:
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
 
-  ali-oss@6.21.0:
+  ali-oss@6.22.0:
     dependencies:
       address: 1.2.2
       agentkeepalive: 3.5.3
@@ -7550,6 +7574,14 @@ snapshots:
       postcss-value-parser: 4.2.0
 
   axios@1.7.7:
+    dependencies:
+      follow-redirects: 1.15.6
+      form-data: 4.0.0
+      proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
+
+  axios@1.7.9:
     dependencies:
       follow-redirects: 1.15.6
       form-data: 4.0.0
@@ -10166,7 +10198,7 @@ snapshots:
     optionalDependencies:
       '@swc/core': 1.7.26
 
-  ts-pattern@5.5.0: {}
+  ts-pattern@5.6.0: {}
 
   ts-toolbelt@9.6.0: {}
 
@@ -10178,7 +10210,7 @@ snapshots:
 
   tslib@2.6.3: {}
 
-  tsyringe-neo@5.0.3:
+  tsyringe-neo@5.1.0:
     dependencies:
       tslib: 2.6.3
 
@@ -10197,6 +10229,8 @@ snapshots:
   type-fest@0.21.3: {}
 
   type-fest@4.26.1: {}
+
+  type-fest@4.30.2: {}
 
   types-ramda@0.30.1:
     dependencies:
