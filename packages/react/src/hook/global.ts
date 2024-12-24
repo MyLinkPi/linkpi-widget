@@ -43,7 +43,7 @@ export const getWidgetUtilsContext = () =>
     useCurrentNode: () => ({}) as TemplateNodeData,
     useNodeTreeData: () => [] as NodeTreeData[],
     useJumpNode: () => ({
-      jump: (_nodeId: string, _viewId: string) => {},
+      jump: (_nodeId: string, _viewId: string, _querys: Record<string, string>) => {},
     }),
     useNodeContentModalClose: () => ({
       close: () => {},
