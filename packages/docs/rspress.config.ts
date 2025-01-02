@@ -1,4 +1,3 @@
-
 import { defineConfig } from "rspress/config";
 
 export default defineConfig({
@@ -6,7 +5,7 @@ export default defineConfig({
   title: 'LinkPi Widget',
   description: 'LinkPi Widget Documentation',
   lang: 'zh',
-  base: '/',
+  base: '/linkpi-widget/',
   logo: 'https://test-inner-oss.linkerpi.com/storage/e94dedf4c1764fdeab2b35cd81db4117.png?OSSAccessKeyId=LTAI4GJJjJfFS4KtHxuFw5tZ&Expires=4954595693&Signature=YriZWy%2B4mNk8JqZ805iJi65keVk%3D',
   logoText: 'LinkPi Widget',
   themeConfig: {
