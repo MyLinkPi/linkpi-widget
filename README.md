@@ -91,6 +91,6 @@ export default defineWidget<IFooBarWidget>()({
 - [x] 访问主题类型配置列表 hook
 - [x] 访问 SDK 实例 hook
 - [x] 访问 当前节点 hook
-- [ ] 路由跳转
+- [x] 鉴权
+- [x] 路由跳转
 - [ ] 开发视图组件
-- [ ] 鉴权 (基于连接派网页版)

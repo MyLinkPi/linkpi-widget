@@ -1,0 +1,14 @@
+{
+  "prompts": [
+    {
+      "name": "domain_knowledge",
+      "description": "业务领域知识",
+      "content": "LinkPi Widget 是一个用于构建可视化数据分析界面的组件库系统。以下是核心业务概念：\n\n1. Node（主题）\n- 系统中的一条具体数据记录\n- 每个 Node 都有其对应的模板类型（Template）\n- Node 包含基础属性（如 ID、名称、创建时间等）和模板定义的自定义属性\n- Node 之间可以建立关联关系，形成树状结构\n\n2. Template（主题类型）\n- 定义了 Node 的结构和行为\n- 包含系统属性：\n  * id: 模板唯一标识\n  * name: 模板名称\n  * description: 模板描述\n  * icon: 模板图标\n\n3. Widget（组件）\n- 用于展示和操作 Node 数据的可视化组件\n- 每个 Widget 都有三个核心阶段：\n  * Preview: 预览阶段，搭建页面展示的内容\n  * Setting: 设置阶段，配置组件属性\n  * Render: 渲染阶段，展示实际内容\n- Widget 可以：\n  * 读取当前 Node 的属性数据\n  * 访问关联的其他 Node\n  * 使用全局条件进行数据过滤\n  * 在不同 Node 间进行跳转\n\n4. 全局条件\n- 用于跨组件的数据过滤\n- 可以设置多个条件组合\n- 条件值会影响所有配置了该条件的组件\n\n5. 业务场景\n- 数据分析：展示各类数据指标和图表\n- 数据管理：管理和编辑 Node 数据\n- 数据关联：建立和展示 Node 之间的关系\n- 数据过滤：使用全局条件筛选数据"
+    },
+    {
+      "name": "code_conventions",
+      "description": "代码规范",
+      "content": "在开发 LinkPi Widget 时，请遵循以下规范：\n\n1. 命名规范\n- Template ID: 使用驼峰命名，如 'userProfile'\n- Node 属性: 使用驼峰命名，如 'firstName'\n- Widget ID: 使用驼峰命名，如 'dataTable'\n- Hook 命名: 使用 'use' 前缀，如 'useTemplateInfo'\n\n2. 类型定义\n- 使用 TypeScript 类型定义\n- 为所有 Props 和返回值定义接口\n- 使用 JsonObject 作为通用对象类型\n\n3. 组件开发\n- 使用函数组件和 Hooks\n- 分离业务逻辑和 UI 渲染\n- 使用 CSS Modules 或 styled-components\n\n4. 错误处理\n- 使用 try-catch 处理异步操作\n- 提供友好的错误提示\n- 实现错误降级展示"
+    }
+  ]
+}
