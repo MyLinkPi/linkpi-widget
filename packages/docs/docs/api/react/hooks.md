@@ -69,20 +69,20 @@ function YourComponent() {
 
 ### useCurrentOrgId
 
-获取当前组织 ID。
+获取当前空间 ID。
 
 ```typescript
 import { useCurrentOrgId } from '@mylinkpi/widget-react'
 
 function YourComponent() {
   const orgId = useCurrentOrgId()
-  return <div>当前组织：{orgId}</div>
+  return <div>当前空间：{orgId}</div>
 }
 ```
 
 ### usePiSDK
 
-获取 Pi SDK 实例。
+获取 Pi SDK 实例。详细的 SDK API 文档请参考 [PiSDK API 文档](/api/sdk/pi-sdk)。
 
 ```typescript
 import { usePiSDK } from '@mylinkpi/widget-react'

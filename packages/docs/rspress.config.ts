@@ -59,8 +59,22 @@ export default defineConfig({
           ],
         },
         {
+          text: "SDK",
+          items: [
+            {
+              text: "Pi SDK",
+              link: "/api/sdk/pi-sdk",
+            },
+          ],
+        },
+        {
           text: "Core",
-          link: "/api/core/",
+          items: [
+            {
+              text: "概述",
+              link: "/api/core/",
+            },
+          ],
         },
       ],
     },
