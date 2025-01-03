@@ -12,7 +12,7 @@
     "rspress": "^1.39.3"
   },
   "devDependencies": {
-    "@types/node": "^18.11.17",
-    "gh-pages": "^6.1.1"
+    "@types/node": "^18.19.69",
+    "gh-pages": "^6.3.0"
   }
 }
