@@ -8,7 +8,7 @@ hero:
     企业级
     自定义组件开发框架
   image:
-    src: https://test-inner-oss.linkerpi.com/storage/e94dedf4c1764fdeab2b35cd81db4117.png?OSSAccessKeyId=LTAI4GJJjJfFS4KtHxuFw5tZ&Expires=4954595693&Signature=YriZWy%2B4mNk8JqZ805iJi65keVk%3D
+    src: /logo.png
     alt: LinkPi Logo
   tagline: 为连接派低代码平台提供组件扩展能力
   actions:

@@ -4,7 +4,9 @@ LinkPi Widget 是一个用于构建可视化配置的组件开发框架。它主
 
 ## 组件示例
 
-![组件示例](https://test-inner-oss.linkerpi.com/storage/6fb94241fad549678d27e550f066fd50.png?OSSAccessKeyId=LTAI4GJJjJfFS4KtHxuFw5tZ&Expires=4954597902&Signature=U0i6TCBES6HikV3%2FOyelupxk%2B6Y%3D)
+![组件示例](/example.png)
+
+![组件示例2](/example2.png)
 
 如上图所示，每个组件包含三个主要部分：
 - 预览区：展示组件在页面中的预览效果
