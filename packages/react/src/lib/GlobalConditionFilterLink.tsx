@@ -2,6 +2,9 @@ import { createElement, FC, useContext } from "react";
 
 import { getWidgetUtilsContext } from "@/hook";
 
+/**
+ * @deprecated
+ */
 export const GlobalConditionFilterLink: FC<{
   id: string;
   onShowBtnClick?: () => void;

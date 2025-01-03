@@ -67,11 +67,23 @@ export default defineWidget<IWidgetProps>()({
 
 - `icon`: 组件图标，用于在组件库中展示
 - `basic`: 基础配置
-  - `defaultHeight`: 默认高度，单位为网格
-  - `defaultWidth`: 默认宽度，单位为网格
-  - `minWidth`: 最小宽度限制，单位为网格
-  - `minHeight`: 最小高度限制，单位为网格
-  - `settingWidth`: 设置面板宽度，单位为像素
+  - 尺寸相关配置：
+    - `defaultHeight`: 默认高度，单位为网格（必填）。一个单位为 40px，必须为整数
+    - `defaultWidth`: 默认宽度，单位为网格（必填）。一个单位为容器宽度的 1/12，取值范围 1-12，必须为整数
+    - `minWidth`: 最小宽度限制，单位为网格。取值范围 1-12，必须为整数
+    - `minHeight`: 最小高度限制，单位为网格。一个单位为 40px，必须为整数
+    - `maxWidth`: 最大宽度限制，单位为网格。取值范围 1-12，必须为整数
+    - `maxHeight`: 最大高度限制，单位为网格。一个单位为 40px，必须为整数
+    - `settingWidth`: 设置面板宽度，单位为像素
+  - 行为相关配置：
+    - `maxCount`: 最大实例数量限制
+    - `minCount`: 最小实例数量限制
+    - `deletable`: 是否可删除
+    - `movable`: 是否可移动
+    - `copyable`: 是否可复制
+    - `resizable`: 是否可调整大小
+    - `nested`: 是否可嵌套
+    - `dynamicHeight`: 是否可以放入动态高度版块
 - `metadata`: 组件默认配置数据，会作为初始值传递给组件
 - `preview`: 预览组件，用于组件选择和布局编辑时的展示
 - `setting`: 设置组件，用于配置组件属性
@@ -96,7 +108,9 @@ export default defineWidgetConfig({
   // 组件唯一标识，建议使用有意义的英文标识
   id: "ExampleWidget",
   // 组件显示名称，用于在界面上展示
-  name: "示例组件"
+  name: "示例组件",
+  // 组件分组名称，用于在组件库中进行分类展示
+  comp_group: "基础组件"
 });
 ```
 
@@ -104,6 +118,7 @@ export default defineWidgetConfig({
 
 - `id`: 组件的唯一标识符，在整个系统中必须唯一，建议使用有意义的英文标识
 - `name`: 组件的显示名称，用于在组件库、设置面板等界面上展示
+- `comp_group`: 组件分组名称，用于在组件库中对组件进行分类展示，可选参数
 
 ### 使用建议
 

@@ -312,3 +312,97 @@ function YourComponent() {
   )
 }
 ```
+
+### useNodeContentModalClose
+
+获取关闭节点内容弹窗的方法。
+
+```typescript
+import { useNodeContentModalClose } from '@mylinkpi/widget-react'
+
+function YourComponent() {
+  const { close } = useNodeContentModalClose()
+
+  return (
+    <button onClick={close}>
+      关闭弹窗
+    </button>
+  )
+}
+```
+
+### useWidgetInstanceList
+
+获取所有组件实例列表。
+
+```typescript
+import { useWidgetInstanceList } from '@mylinkpi/widget-react'
+
+function YourComponent() {
+  const instances = useWidgetInstanceList()
+
+  return (
+    <div>
+      <h3>组件实例列表</h3>
+      <ul>
+        {instances.map(instance => (
+          <li key={instance.id}>
+            {instance.name}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+```
+
+### useWidgetInstancesByWidgetId
+
+根据组件类型 ID 获取对应的组件实例列表。
+
+```typescript
+import { useWidgetInstancesByWidgetId } from '@mylinkpi/widget-react'
+
+function YourComponent() {
+  const instances = useWidgetInstancesByWidgetId('your-widget-id')
+
+  return (
+    <div>
+      <h3>特定类型的组件实例</h3>
+      <ul>
+        {instances.map(instance => (
+          <li key={instance.id}>
+            {instance.name}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+```
+
+### useSetExtraGlobalConditions
+
+设置组件的额外全局筛选条件。
+
+```typescript
+import { useSetExtraGlobalConditions } from '@mylinkpi/widget-react'
+
+function YourComponent() {
+  const setExtraConditions = useSetExtraGlobalConditions()
+
+  const handleSetConditions = () => {
+    setExtraConditions('target-id', [{
+      key: 'sysCreateTime',
+      op: 'timeAfter'
+      input: [1735315199999],
+    }])
+  }
+
+  return (
+    <button onClick={handleSetConditions}>
+      设置额外筛选条件
+    </button>
+  )
+}
+```
