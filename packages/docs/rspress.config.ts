@@ -5,7 +5,7 @@ export default defineConfig({
   title: "连接派 | LinkPi Widget",
   description: "连接派平台自定义组件文档",
   lang: "zh",
-  base: "/",
+  base: "/linkpi-widget",
   logo: "/logo_text.png",
   icon: "/favicon.ico",
   themeConfig: {
