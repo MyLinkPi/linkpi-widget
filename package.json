@@ -1,6 +1,6 @@
 {
   "name": "mylinkpi-widget",
-  "version": "1.0.0-rc.32",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
