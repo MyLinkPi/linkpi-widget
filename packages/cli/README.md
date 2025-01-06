@@ -20,7 +20,7 @@ $ npm install -g @mylinkpi/widget-cli
 $ widget-cli COMMAND
 running command...
 $ widget-cli (--version)
-@mylinkpi/widget-cli/1.0.0-rc.32 darwin-arm64 node-v18.20.4
+@mylinkpi/widget-cli/1.0.1 darwin-arm64 node-v18.20.4
 $ widget-cli --help [COMMAND]
 USAGE
   $ widget-cli COMMAND
@@ -68,7 +68,7 @@ EXAMPLES
   $ widget-cli build
 ```
 
-_See code: [src/commands/build.ts](https://github.com/packages/widget-cli/blob/v1.0.0-rc.32/src/commands/build.ts)_
+_See code: [src/commands/build.ts](https://github.com/packages/widget-cli/blob/v1.0.1/src/commands/build.ts)_
 
 ## `widget-cli dev`
 
@@ -82,7 +82,7 @@ DESCRIPTION
   Start the Vite development server using in-memory configuration
 ```
 
-_See code: [src/commands/dev/index.ts](https://github.com/packages/widget-cli/blob/v1.0.0-rc.32/src/commands/dev/index.ts)_
+_See code: [src/commands/dev/index.ts](https://github.com/packages/widget-cli/blob/v1.0.1/src/commands/dev/index.ts)_
 
 ## `widget-cli hello PERSON`
 
@@ -106,7 +106,7 @@ EXAMPLES
   hello friend from oclif! (./src/commands/hello/index.ts)
 ```
 
-_See code: [src/commands/hello/index.ts](https://github.com/packages/widget-cli/blob/v1.0.0-rc.32/src/commands/hello/index.ts)_
+_See code: [src/commands/hello/index.ts](https://github.com/packages/widget-cli/blob/v1.0.1/src/commands/hello/index.ts)_
 
 ## `widget-cli hello world`
 
@@ -124,7 +124,7 @@ EXAMPLES
   hello world! (./src/commands/hello/world.ts)
 ```
 
-_See code: [src/commands/hello/world.ts](https://github.com/packages/widget-cli/blob/v1.0.0-rc.32/src/commands/hello/world.ts)_
+_See code: [src/commands/hello/world.ts](https://github.com/packages/widget-cli/blob/v1.0.1/src/commands/hello/world.ts)_
 
 ## `widget-cli help [COMMAND]`
 
@@ -144,7 +144,7 @@ DESCRIPTION
   Display help for widget-cli.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.2.16/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.2.20/src/commands/help.ts)_
 
 ## `widget-cli info`
 
@@ -164,7 +164,7 @@ EXAMPLES
   $ widget-cli info
 ```
 
-_See code: [src/commands/info.ts](https://github.com/packages/widget-cli/blob/v1.0.0-rc.32/src/commands/info.ts)_
+_See code: [src/commands/info.ts](https://github.com/packages/widget-cli/blob/v1.0.1/src/commands/info.ts)_
 
 ## `widget-cli plugins`
 
@@ -187,7 +187,7 @@ EXAMPLES
   $ widget-cli plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.24/src/commands/plugins/index.ts)_
 
 ## `widget-cli plugins add PLUGIN`
 
@@ -261,7 +261,7 @@ EXAMPLES
   $ widget-cli plugins inspect myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.24/src/commands/plugins/inspect.ts)_
 
 ## `widget-cli plugins install PLUGIN`
 
@@ -310,7 +310,7 @@ EXAMPLES
     $ widget-cli plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.24/src/commands/plugins/install.ts)_
 
 ## `widget-cli plugins link PATH`
 
@@ -341,7 +341,7 @@ EXAMPLES
   $ widget-cli plugins link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.24/src/commands/plugins/link.ts)_
 
 ## `widget-cli plugins remove [PLUGIN]`
 
@@ -382,7 +382,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.24/src/commands/plugins/reset.ts)_
 
 ## `widget-cli plugins uninstall [PLUGIN]`
 
@@ -410,7 +410,7 @@ EXAMPLES
   $ widget-cli plugins uninstall myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.24/src/commands/plugins/uninstall.ts)_
 
 ## `widget-cli plugins unlink [PLUGIN]`
 
@@ -454,7 +454,7 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.15/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.24/src/commands/plugins/update.ts)_
 
 ## `widget-cli publish`
 
@@ -474,7 +474,7 @@ EXAMPLES
   $ widget-cli publish
 ```
 
-_See code: [src/commands/publish.ts](https://github.com/packages/widget-cli/blob/v1.0.0-rc.32/src/commands/publish.ts)_
+_See code: [src/commands/publish.ts](https://github.com/packages/widget-cli/blob/v1.0.1/src/commands/publish.ts)_
 
 ## `widget-cli publish-dev`
 
@@ -494,5 +494,5 @@ EXAMPLES
   $ widget-cli publish-dev
 ```
 
-_See code: [src/commands/publish-dev.ts](https://github.com/packages/widget-cli/blob/v1.0.0-rc.32/src/commands/publish-dev.ts)_
+_See code: [src/commands/publish-dev.ts](https://github.com/packages/widget-cli/blob/v1.0.1/src/commands/publish-dev.ts)_
 <!-- commandsstop -->

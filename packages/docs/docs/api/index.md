@@ -4,10 +4,21 @@ LinkPi Widget 是一个用于构建可视化数据分析界面的组件库系统
 
 ## @mylinkpi/widget-react
 
-React 组件库，提供了一系列用于构建和管理自定义组件的 React 组件和 Hooks。
+React 组件库，提供了一系列组件和 Hooks，用于帮助开发者在开发自定义组件时更好地集成连接派平台的功能。
 
-- [组件](/api/react/components) - 包含 `WidgetPreview`、`WidgetRender`、`WidgetSetting` 等核心组件，用于组件的预览、配置和渲染
-- [Hooks](/api/react/hooks) - 包含访问主题数据、主题类型、全局条件等功能的 Hooks
+### 组件
+- [组件](/api/react/components) - 包含 `DataSourceSettingWidgetSetting`、`GlobalConditionFilterItemSelect`、`NodeViewComponent`、`TemplateSelect`、`ViewSelect` 等组件，用于集成平台的数据源配置、全局筛选、节点视图等功能
+
+### Hooks
+- [Hooks](/api/react/hooks) - 提供了丰富的 Hooks API：
+  - 组件配置相关：`useWidgetSetting`、`useWidgetSharedState`
+  - 全局状态：`useCurrentUser`、`useCurrentOrgId`、`usePiSDK`
+  - 主题相关：`useCurrentNode`、`useNodeTreeData`、`useJumpNode`
+  - 主题类型相关：`useTemplateList`、`useTempateInfo`
+  - 全局条件：`useGlobalConditions`、`useGlobalConditionFilterValue`
+  - 其他工具：`useUrlQuerys`、`useWidgetInstanceList` 等
+
+所有组件和 Hooks 都使用了 React Context 来获取平台提供的功能，确保在使用时应用已正确配置必要的 Context Provider。
 
 ## @mylinkpi/widget-core
 
