@@ -43,7 +43,11 @@ export const getWidgetUtilsContext = () =>
     useCurrentNode: () => ({}) as TemplateNodeData,
     useNodeTreeData: () => [] as NodeTreeData[],
     useJumpNode: () => ({
-      jump: (_nodeId: string, _viewId: string, _querys: Record<string, string>) => {},
+      jump: (
+        _nodeId: string,
+        _viewId: string,
+        _querys: Record<string, string>
+      ) => {},
     }),
     useNodeContentModalClose: () => ({
       close: () => {},
@@ -62,7 +66,10 @@ export const getWidgetUtilsContext = () =>
       id: string;
       onShowBtnClick?: () => void;
     }>,
-    useGlobalConditions: (_id: string) => [] as ViewList.ViewconditionV2,
+    useGlobalConditions: (
+      _condition: ViewList.ViewconditionV2 | string,
+      _targetId?: string
+    ) => [] as ViewList.ViewconditionV2,
     useSetExtraGlobalConditions:
       () => (_targetId: string, _conditions: ViewList.ViewconditionV2) => {},
     useGlobalConditionFilterValue: (_id: string) =>
@@ -259,11 +266,14 @@ export const useWidgetInstanceListByGroupId = (groupId: string) => {
 /**
  * 传入当前组件实例id，获取全局筛选的条件
  */
-export const useGlobalConditions = (id: string) => {
+export const useGlobalConditions = (
+  condition: ViewList.ViewconditionV2 | string,
+  targetId?: string
+) => {
   const context = getWidgetUtilsContext();
   const { useGlobalConditions: _useGlobalConditions } = useContext(context);
 
-  return _useGlobalConditions(id);
+  return _useGlobalConditions(condition, targetId);
 };
 
 /**
